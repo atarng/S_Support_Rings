@@ -1,0 +1,24 @@
+[package]
+name = "s_support_rings"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[package.metadata.skyline]
+titleid = "01006A800016E000" # Smash Ultimate
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+skyline = { git = "https://github.com/ultimate-research/skyline-rs" }
+engage = { git = "https://github.com/DivineDragonFanClub/engage" }
+unity = { git = "https://github.com/DivineDragonFanClub/unity" }
+cobapi = { git = "https://github.com/DivineDragonFanClub/cobapi" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
