@@ -110,6 +110,17 @@ pub fn main() {
 //================= RESEARCH_BELOW ========================================
 //================= RESEARCH_BELOW ========================================
 
+    // chekcs in add skill for max count (3 now)
+    // 0x7101a35fd0: 1f 05 00 71 => 1f 11, 00, 71
+    Patch::in_text(0x01a35fd0).bytes(&[0x1f, 0x09, 0x00, 0x71]).unwrap();
+    // 0x7101a35ff8 : 1f 05 00 71 => 1f 11, 00, 71
+    Patch::in_text(0x01a35ff8).bytes(&[0x1f, 0x09, 0x00, 0x71]).unwrap();
+
+    //// make eskill list only 5 items in the UI
+    // 0x7102499c8c 40 03 40 f9 ldr super,[x26]=>App.SkillEditEquipSkillMenuItem_T
+    //                          b  #0xdc // b 7102499d68
+    Patch::in_text(0x02499c8c).bytes(&[0x37, 0x00, 0x00, 0x14]).unwrap();
+
     // Don't clear owner from Ring
     // 0x7101d60b18 62 f3 fb 17 b App.UnitRingPool$$ClearOwner
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -161,15 +172,15 @@ pub fn main() {
     install_hook!(rscd_confirmyesdialogitem_acall);
     
     install_hook!(unit_addequipskill2);
+    install_hook!(unit_removeequipskill2);
+    install_hook!(unit_getequipskill);
     install_hook!(unit_addskill1);
     install_hook!(unit_addskill2);
     install_hook!(unit_addskill3);
     install_hook!(unit_addskillwoupdate);
-    install_hook!(unit_removeequipskill2);
     install_hook!(unit_cleargodunit);
     install_hook!(unit_cleargodunitfromcopy);
     install_hook!(unit_clearring);
-    install_hook!(unit_getequipskill);
     install_hook!(unit_tryconnectgodunit);
     install_hook!(unit_tryconnectgodunittocopy);
     install_hook!(unit_trydisconnectgodunit);
@@ -183,8 +194,12 @@ pub fn main() {
     install_hook!(unitringpool_clearowner);
     install_hook!(unitringpool_setowner);
 
+    install_hook!(unitinfoparammanager_setunit);
+
     install_hook!(unitselectringmenu_takeoffallrings);
     install_hook!(unitselectringmenu_takeoffring);
+
+    install_hook!(unitstatussetter_setskill);
 
 }
 
@@ -437,49 +452,97 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
                 let ring_data = unit_ring.fields.data;
                 println!("[infoutil_getskilllistforunitinfo] god: {} ring: {}", god.fields.data.fields.gid, ring_data.fields.rid);
 
-                let mut start = 0;
-                let mut fin = size as usize;
-                let mut offset = 0;
-                // if job skill present: set offset 2 to skill personal and job.
-                // otherwise offset 1 to skip personal only (?)
-                if infoutil_statusskill_getcategory(original[1], _method_info) == 2 && infoutil_statusskill_getisactive(original[1], _method_info) {
-                    offset = 4;
-                    start = 4;
-                    fin = 5; // 7 => 5
-                } else {
-                    offset = 3;
-                    start = 3;
-                    fin = 4; // 6 => 4
-                }
-                // make room for the new equip skill slots.
-                // start from end (11) -> fin(4/5) {11, 10, 9 ... 4/5}
-                for x in (fin..original.len()).rev() {
-                    original[x] = original[x-1];
-                }
+                if let Some(equipped_skills) = unit_getequipskill(person, _method_info) {
 
-                // skill array
-                let skills_to_add = ring_data.get_equip_skills();
-                println!("[infoutil_getskilllistforunitinfo] ringskills_count: {}", skills_to_add.len());
-                // 0..skills_to_add.len()
-                for x in start..fin {
-                    // bond_ring_skill: SkillData
-                    if let Some(bond_ring_skill) = skills_to_add[x - offset as usize].get_skill() {
-                        let dupet = Il2CppClass::from_name("App", "InfoUtil").unwrap().get_nested_types().iter().find(|x| x.get_name() == "StatusSkill").unwrap();
-                        let newt: &'static StatusSkill = il2cpp::instantiate_class::<StatusSkill>(dupet).unwrap();
-                        original[x as usize] = newt;
-                        // Category:
-                        // 6: ring
-                        // 11: Inheritance
-                        infoutil_statusskill_setcategory(original[x as usize], 6, _method_info); 
+                    println!("[infoutil_getskilllistforunitinfo] unit_equipped_skills: {}", equipped_skills.len());
 
-                        let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
-                        if sid == "SID_無し" || sid == "無し" || sid == "" {
-                            infoutiil_statusskill_setdata(original[x as usize], None, _method_info);
-                            infoutil_statusskill_setisactive(original[x as usize], false, _method_info);
+                    let mut start = 0;
+                    let mut fin = size as usize;
+                    let mut offset = 0;
+
+                    if is_equip {
+                        //realstart = 0
+                        start = 2;
+                        fin = 3;
+
+                    // } else { // if is_pack
+                    //     // if job skill present: set offset 2 to skill personal and job.
+                    //     // otherwise offset 1 to skip personal only (?)
+                    //     if infoutil_statusskill_getcategory(original[1], _method_info) == 2 && infoutil_statusskill_getisactive(original[1], _method_info) {
+                    //         offset = 2;
+                    //         start = 2;
+                    //         fin = 3; // 7 => 5
+                    //     } else {
+                    //         offset = 1;
+                    //         start = 1;
+                    //         fin = 2; // 6 => 4
+                    //     }
+                    // }
+                    // // make room for the new bond ring skill slot.
+                    // // start from end (11) -> fin(4/5) {11, 10, 9 ... 4/5}
+                    // for x in (fin..original.len()).rev() {
+                    //     original[x] = original[x-1];
+                    // }
+                    // let skills_to_add = ring_data.get_equip_skills();
+                    // println!("[infoutil_getskilllistforunitinfo] ringskills_count: {}", skills_to_add.len());
+                    // // 0..skills_to_add.len()
+                    // for x in start..fin {
+                    //     // bond_ring_skill: SkillData
+                    //     if let Some(bond_ring_skill) = skills_to_add[x - offset as usize].get_skill() {
+                    //         let dupet = Il2CppClass::from_name("App", "InfoUtil").unwrap().get_nested_types().iter().find(|x| x.get_name() == "StatusSkill").unwrap();
+                    //         let newt: &'static StatusSkill = il2cpp::instantiate_class::<StatusSkill>(dupet).unwrap();
+                    //         original[x as usize] = newt;
+                    //         // Category:
+                    //         // 6: ring
+                    //         // 11: Inheritance
+                    //         infoutil_statusskill_setcategory(original[x as usize], 6, _method_info); 
+                    //         let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
+                    //         if sid == "SID_無し" || sid == "無し" || sid == "" {
+                    //             infoutiil_statusskill_setdata(original[x as usize], None, _method_info);
+                    //             infoutil_statusskill_setisactive(original[x as usize], false, _method_info);
+                    //         } else {
+                    //             println!("[infoutil_getskilllistforunitinfo] {0}: {1}", x, sid);
+                    //             infoutiil_statusskill_setdata(original[x as usize], Some(bond_ring_skill), _method_info);
+                    //             infoutil_statusskill_setisactive(original[x as usize], true, _method_info);
+                    //         }
+                    //     }
+                    // }
+                    ///////////////////////////////////////////////////////////////////////////////////////
+
+                    } else { // if is_pack
+                        // if job skill present: set offset 2 to skill personal and job.
+                        // otherwise offset 1 to skip personal only (?)
+                        if infoutil_statusskill_getcategory(original[1], _method_info) == 2 && infoutil_statusskill_getisactive(original[1], _method_info) {
+                            offset = 2;
+                            start = 2;
+                            fin = 5; // 7 => 5
                         } else {
-                            println!("[infoutil_getskilllistforunitinfo] {0}: {1}", x, sid);
-                            infoutiil_statusskill_setdata(original[x as usize], Some(bond_ring_skill), _method_info);
-                            infoutil_statusskill_setisactive(original[x as usize], true, _method_info);
+                            offset = 1;
+                            start = 1;
+                            fin = 4; // 6 => 4
+                        }
+                    }
+                    for x in (fin..original.len()).rev() {
+                        original[x] = original[x-1];
+                    }
+                    for x in start..fin {
+                        if let Some(eSkill) = equipped_skills[x - offset as usize].get_skill() {
+                            let dupet = Il2CppClass::from_name("App", "InfoUtil").unwrap().get_nested_types().iter().find(|x| x.get_name() == "StatusSkill").unwrap();
+                            let newt: &'static StatusSkill = il2cpp::instantiate_class::<StatusSkill>(dupet).unwrap();
+                            original[x as usize] = newt;
+                            // category 11: equip skills
+                            // let skill_category = 11;
+                            let skill_category = equipped_skills[x as usize].get_category();
+                            infoutil_statusskill_setcategory(original[x as usize], skill_category, _method_info); 
+                            let sid = eSkill.sid.get_string().unwrap_or("".to_string());
+                            if sid == "SID_無し" || sid == "無し" || sid == "" {
+                                infoutiil_statusskill_setdata(original[x as usize], None, _method_info);
+                                infoutil_statusskill_setisactive(original[x as usize], false, _method_info);
+                            } else {
+                                println!("[infoutil_getskilllistforunitinfo] {0}: {1} category: {2}", x, sid, skill_category);
+                                infoutiil_statusskill_setdata(original[x as usize], Some(eSkill), _method_info);
+                                infoutil_statusskill_setisactive(original[x as usize], true, _method_info);
+                            }
                         }
                     }
                 }
@@ -570,35 +633,57 @@ pub fn unitring_changeowner(this: &UnitRing, owner: &Unit, _method_info: u64)
 }
 
 // unity::from_offset("App", "Unit", "get_EquipSkill")
-// 0x7101C5D760
 // 0x7101a54ee0
 #[skyline::hook(offset=0x01a54ee0)]
 pub fn unit_getequipskill(this: &Unit, _method_info: u64) -> Option<&SkillArray> {
     println!("[unit_getequipskill]");
 
     let equipped_skills = call_original!(this, _method_info);
+
     if let Some(skills_unwrapped) = equipped_skills {
         println!("[unit_getequipskill] skills: {0}", skills_unwrapped.len());
+        // let mut skill_count = 0;
+        // for x in 0..skills_unwrapped.len() {
+        //     if let Some(bond_ring_skill) = skills_unwrapped[x as usize].get_skill() {
+        //         let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
+        //         if sid == "SID_無し" || sid == "無し" || sid == "" {
+        //         } else {
+        //             skill_count += 1;
+        //         }
+        //     }
+        // }
+        let mut ring_skill_added = 0;
+        // if skill_count < 3 {
+        //     println!("[unit_getequipskill] skill count is {}, we've probably already added bond ring skill.", skill_count);
+        // } else {
+        if let Some(god) = this.get_god_unit() {
         if let Some(unit_ring) = this.get_ring() {
             let ring_data = unit_ring.fields.data;
-            println!("[unit_getequipskill] ring: {}", ring_data.fields.rid);
             let skills_to_add = ring_data.get_equip_skills();
+            println!("[unit_getequipskill] ring: {} skills: {}", ring_data.fields.rid, skills_to_add.len());
             for x in 0..skills_to_add.len() {
                 // bond_ring_skill: SkillData
                 if let Some(bond_ring_skill) = skills_to_add[x as usize].get_skill() {
                     let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
                     if sid == "SID_無し" || sid == "無し" || sid == "" {
                     } else {
-                        println!("[unit_getequipskill] add_skill: {}", sid);
-                        skills_unwrapped.add_skill(bond_ring_skill, 11, 0);
+                        println!("[unit_getequipskill] add_skill_{}: {}", x, sid);
+                        // category:
+                        // 6: bond ring
+                        // 11: equip
+                        let category = 6;
+                        if ring_skill_added == 0 {
+                            skills_unwrapped.add_skill(bond_ring_skill, category, 0);
+                        }
+                        // unit_addequipskill2(this, skills_to_add[x as usize].get_skill(), _method_info);
+                        ring_skill_added += 1;
                     }
                 }
             }
-        } else {
-            println!("[unit_getequipskill] no ring");
-        }
+        }}
+        // }
     } else {
-        println!("[unit_getequipskill] ?????");
+        println!("[unit_getequipskill] ????????????????");
     }
 
     return equipped_skills;
@@ -612,8 +697,6 @@ pub fn unit_setgodunit_1(this: &Unit, god_unit: &GodUnit, _method_info : u64)
     call_original!(this, god_unit, _method_info);
 }
 
-// This part is a bit odd, since Ring already points to unit as its owner.
-// Unit can own a ring, and a ring can have an owner.
 #[unity::hook("App", "Unit", "SetRing")]
 pub fn unit_setring(this: &Unit, ring: &UnitRing, _method_info : u64)
 {
@@ -625,7 +708,6 @@ pub fn unit_setring(this: &Unit, ring: &UnitRing, _method_info : u64)
             println!("[unit_setring] {0} does not have an existing ring.", this.get_pid());
         }
     }
-
     match ring.owner {
         Some(owner_unwrapped) => {
             println!("[unit_setring] Ring {0} Owner: {1}", ring.data.name, owner_unwrapped.get_pid());
@@ -636,6 +718,23 @@ pub fn unit_setring(this: &Unit, ring: &UnitRing, _method_info : u64)
     }
 
     call_original!(this, ring, _method_info);
+
+    // if let Some(god_unwrapped) = this.get_god_unit() {
+    //     let skills_to_add = ring.fields.data.get_equip_skills();
+    //     println!("[unit_setring] ringskills_count: {}", skills_to_add.len());
+    //     for x in 0..skills_to_add.len() {
+    //         // bond_ring_skill: SkillData
+    //         if let Some(bond_ring_skill) = skills_to_add[x as usize].get_skill() {
+    //             let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
+    //             if sid == "SID_無し" || sid == "無し" || sid == "" {
+    //             } else {
+    //                 println!("[unit_setring] {0}: {1}", x, sid);
+    //                 unit_addequipskill2(this, skills_to_add[x as usize].get_skill(), _method_info);
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 #[unity::hook("App", "Unit", "TryConnectGodUnit")]
@@ -662,6 +761,24 @@ pub fn unit_trydisconnectgodunit(this: &Unit, _method_info : u64) -> Option<&'st
 #[unity::hook("App", "Unit", "TryDisconnectRing")]
 pub fn unit_trydisconnectring(this: &Unit, _method_info : u64) -> Option<&'static UnitRing>
 {
+    // if let Some(god_unwrapped) = this.get_god_unit() {
+    // if let Some(ring_unwrapped) = this.get_ring() {
+    //     let skills_to_add = ring_unwrapped.fields.data.get_equip_skills();
+    //     println!("[unit_setring] ringskills_count: {}", skills_to_add.len());
+    //     for x in 0..skills_to_add.len() {
+    //         // bond_ring_skill: SkillData
+    //         if let Some(bond_ring_skill) = skills_to_add[x as usize].get_skill() {
+    //             let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
+    //             if sid == "SID_無し" || sid == "無し" || sid == "" {
+    //             } else {
+    //                 println!("[unit_setring] {0}: {1}", x, sid);
+    //                 unit_removeequipskill2(this, skills_to_add[x as usize].get_skill(), _method_info);
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }}
+
     println!("[unit_trydisconnectring] {0}", this.get_pid());
     return call_original!(this, _method_info);
 }
@@ -690,3 +807,49 @@ pub fn unit_removeequipskill2(this: &Unit, skill: Option<&SkillData>, _method_in
     call_original!(this, skill, _method_info);
 }
 
+#[unity::class("App", "UnitInfoParamManager")]
+pub struct UnitInfoParamManager {
+}
+
+// void App.UnitInfoParamManager$$SetUnit
+// (App_UnitInfoParamManager_o *__this,App_Unit_o *unit,int32_t x,int32_t z,
+// bool isDiffCollect,int32_t f,bool isGodChange,App_GodUnit_o *god,App_UnitRing_o *ring
+// ,MethodInfo *method)
+// 0x7101f8cd80
+#[skyline::hook(offset=0x01f8cd80)]
+pub fn unitinfoparammanager_setunit(this: &UnitInfoParamManager, unit: Option<&Unit>, x: i32, z: i32, is_diff_collect: bool,
+        f: i32, is_god_change: bool, god: Option<&GodUnit>, ring: Option<&UnitRing>, _method_info: u64) {
+    println!("[unitinfoparammanager_setunit] ({0}, {1}) is_diff: {2} f: {3} is_god_change: {4}",
+            x, z, is_diff_collect, f, is_god_change);
+    if let Some(unit_unwrapped) = unit {
+        println!("[unitinfoparammanager_setunit] {}", unit_unwrapped.get_pid());
+        if let Some(god_unwrapped) = god {
+            println!("[unitinfoparammanager_setunit] god_gid: {}", god_unwrapped.fields.data.fields.gid);
+        }
+        if let Some(ring_unwrapped) = ring {
+            println!("[unitinfoparammanager_setunit] ring_rid: {}", ring_unwrapped.fields.data.fields.rid);
+        }
+    } else {
+        println!("[unitinfoparammanager_setunit] no unit?");
+    }
+
+    call_original!(this, unit, x, z, is_diff_collect, f, is_god_change, god, ring, _method_info);
+}
+
+#[unity::class("App", "UnitStatusSetter")]
+pub struct UnitStatusSetter {
+}
+
+// void App.UnitStatusSetter$$SetSkill
+//                (App_UnitStatusSetter_o *__this,App_Unit_o *unit,MethodInfo *method)
+// 0x7101c69670
+#[skyline::hook(offset=0x01c69670)]
+pub fn unitstatussetter_setskill(this: &UnitStatusSetter, unit: Option<&Unit>, _method_info: u64) {
+    if let Some(unit_unwrapped) = unit {
+        println!("[unitstatussetter_setskill] unit: {}", unit_unwrapped.get_pid());
+    } else {
+        println!("[unitstatussetter_setskill] no unit");
+    }
+
+    call_original!(this, unit, _method_info);
+}
