@@ -8,6 +8,7 @@ use engage::{
     gamedata::{ Gamedata, JobData, PersonData,
         unit::{Unit, GodUnit, UnitRing},
         item::*,
+        person::CapabilitySbyte,
         ring::RingData,
         skill::*,
     },
@@ -71,6 +72,11 @@ pub fn infoutiil_statusskill_setdata(this: &StatusSkill, value: Option<&SkillDat
 // #[unity::from_offset("App", "InfoUtil_StatusSkill", "set_Category")]
 #[skyline::from_offset(0x1FC7330)]
 pub fn infoutil_statusskill_setcategory(this: &StatusSkill, cat: i32, _method_info: u64);
+
+// 0x71024246b0
+// App_CapabilitySbyte_o * App.RingData$$get_Enhance(App_RingData_o *__this,MethodInfo *method)
+#[skyline::from_offset(0x024246b0)]
+pub fn ringdata_getenhance(this: &RingData, _method_info: u64) -> Option<&CapabilitySbyte>;
 
 // 0x7101a54ee0
 // App_SkillArray_o * App.Unit$$get_EquipSkill(App_Unit_o *__this,MethodInfo *method)
@@ -248,7 +254,7 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
                 println!("[infoutil_getskilllistforunitinfo] slots_needed: {}", slots_needed);
                 // Shift everything over by number of skills that need to be added
                 for i in (start..original.len()).rev() {
-                    let index_to_source = if (i < slots_needed) { 0 } else { i - slots_needed };
+                    let index_to_source = if i < slots_needed { 0 } else { i - slots_needed };
                     original[i] = original[index_to_source as usize];
                     println!("[infoutil_getskilllistforunitinfo] shift: {} <- {}", i, index_to_source);
                 }
@@ -305,39 +311,36 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
 // void App.Unit$$UpdateStateImpl (App_Unit_o *__this,bool isAutoEquip,App_UnitItem_o *equipped,MethodInfo *method)
 #[skyline::hook(offset=0x01a12020)]
 pub fn unit_updatestateimpl(this: &Unit, is_auto_equip: bool, equipped: Option<&UnitItem>, _method_info : u64)
-{
-    if let Some(unit_ring) = this.get_ring() {
-    if let Some(god) = this.get_god_unit() {
-        let ring_data = unit_ring.fields.data;
-        let skills_to_add = ring_data.get_equip_skills();
-        for x in 0..skills_to_add.len() {
-            // bond_ring_skill: SkillData
-            if let Some(bond_ring_skill) = skills_to_add[x as usize].get_skill() {
-                let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
-                if !(sid == "SID_無し" || sid == "無し" || sid == "") {
-                    // category] 6: bond ring, 11: equip
-                    let category = 6;
-                    if !this.has_skill(bond_ring_skill) {
-                        this.fields.equip_skill.add_skill(bond_ring_skill, category, 0);
-                    } else { // refresh the skill? try to insure it is the last index.
-                        this.fields.equip_skill.remove_skill(bond_ring_skill);
-                        this.fields.equip_skill.add_skill(bond_ring_skill, category, 0);
-                    }
-                }
+{unsafe{
+    // Unequip All Bond Ring Skills inside of equip skill array.
+    for i in 0..this.fields.equip_skill.len() {
+        if this.fields.equip_skill[i].get_category() == 6 {
+            if let Some(equip_skill) = this.fields.equip_skill[i].get_skill() {
+                this.fields.equip_skill.remove_skill(equip_skill);
             }
         }
-    }} else {
-        for i in 0..this.fields.equip_skill.len() {
-            if this.fields.equip_skill[i].get_category() == 6 {
-                if let Some(equip_skill) = this.fields.equip_skill[i].get_skill() {
-                    this.fields.equip_skill.remove_skill(equip_skill);
+    }
+
+    if let Some(unit_ring) = this.get_ring() {
+        if let Some(god) = this.get_god_unit() {
+            let ring_data = unit_ring.fields.data;
+            let skills_to_add = ring_data.get_equip_skills();
+            for x in 0..skills_to_add.len() {
+                // bond_ring_skill: SkillData
+                if let Some(bond_ring_skill) = skills_to_add[x as usize].get_skill() {
+                    let sid = bond_ring_skill.sid.get_string().unwrap_or("".to_string());
+                    if !(sid == "SID_無し" || sid == "無し" || sid == "") {
+                        // category] 6: bond ring, 11: equip
+                        let category = 6;
+                        this.fields.equip_skill.add_skill(bond_ring_skill, category, 0);
+                    }
                 }
             }
         }
     }
 
     call_original!(this, is_auto_equip, equipped, _method_info);
-}
+}}
 
 //// HOOKS: END /////
 
