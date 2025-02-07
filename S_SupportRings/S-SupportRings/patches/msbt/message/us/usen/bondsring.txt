@@ -1,0 +1,241 @@
+[MID_BONDSRING_Vander]
+Vander
+
+[MID_BONDSRING_H_Vander00]
+A representation of Vander's Favor.
+
+[MID_BONDSRING_Clanne]
+Clanne
+
+[MID_BONDSRING_H_Clanne00]
+A representation of Clanne's Favor.
+
+[MID_BONDSRING_Framme]
+Framme
+
+[MID_BONDSRING_H_Framme00]
+A representation of Framme's Favor.
+
+[MID_BONDSRING_Alfred]
+Alfred
+
+[MID_BONDSRING_H_Alfred00]
+A representation of Alfred's Favor.
+
+[MID_BONDSRING_Etie]
+Etie
+
+[MID_BONDSRING_H_Etie00]
+A representation of Etie's Favor.
+
+[MID_BONDSRING_Boucheron]
+Boucheron
+
+[MID_BONDSRING_H_Boucheron00]
+A representation of Boucheron's Favor.
+
+[MID_BONDSRING_Celine]
+Celine
+
+[MID_BONDSRING_H_Celine00]
+A representation of Celine's Favor.
+
+[MID_BONDSRING_Chloe]
+Chloe
+
+[MID_BONDSRING_H_Chloe00]
+A representation of Chloe's Favor.
+
+[MID_BONDSRING_Louis]
+Louis
+
+[MID_BONDSRING_H_Louis00]
+A representation of Louis's Favor.
+
+[MID_BONDSRING_Yunaka]
+Yunaka
+
+[MID_BONDSRING_H_Yunaka00]
+A representation of Yunaka's Favor.
+
+[MID_BONDSRING_Alcryst]
+Alcryst
+
+[MID_BONDSRING_H_Alcryst00]
+A representation of Alcryst's Favor.
+
+[MID_BONDSRING_Citrinne]
+Citrinne
+
+[MID_BONDSRING_H_Citrinne00]
+A representation of Citrinne's Favor.
+
+[MID_BONDSRING_Lapis]
+Lapis
+
+[MID_BONDSRING_H_Lapis00]
+A representation of Lapis's Favor.
+
+[MID_BONDSRING_Diamant]
+Diamant
+
+[MID_BONDSRING_H_Diamant00]
+A representation of Diamant's Favor.
+
+[MID_BONDSRING_Amber]
+Amber
+
+[MID_BONDSRING_H_Amber00]
+A representation of Amber's Favor.
+
+[MID_BONDSRING_Jade]
+Jade
+
+[MID_BONDSRING_H_Jade00]
+A representation of Jade's Favor.
+
+[MID_BONDSRING_Ivy]
+Ivy
+
+[MID_BONDSRING_H_Ivy00]
+A representation of Ivy's Favor.
+
+[MID_BONDSRING_Kagetsu]
+Kagetsu
+
+[MID_BONDSRING_H_Kagetsu00]
+A representation of Kagetsu's Favor.
+
+[MID_BONDSRING_Zelkov]
+Zelkov
+
+[MID_BONDSRING_H_Zelkov00]
+A representation of Zelkov's Favor.
+
+[MID_BONDSRING_Fogado]
+Fogado
+
+[MID_BONDSRING_H_Fogado00]
+A representation of Fogado's Favor.
+
+[MID_BONDSRING_Pandreo]
+Pandreo
+
+[MID_BONDSRING_H_Pandreo00]
+A representation of Pandreo's Favor.
+
+[MID_BONDSRING_Bonet]
+Bonet
+
+[MID_BONDSRING_H_Bonet00]
+A representation of Bonet's Favor.
+
+[MID_BONDSRING_Timerra]
+Timerra
+
+[MID_BONDSRING_H_Timerra00]
+A representation of Timerra's Favor.
+
+[MID_BONDSRING_Merrin]
+Merrin
+
+[MID_BONDSRING_H_Merrin00]
+A representation of Merrin's Favor.
+
+[MID_BONDSRING_Panette]
+Panette
+
+[MID_BONDSRING_H_Panette00]
+A representation of Panette's Favor.
+
+[MID_BONDSRING_Hortensia]
+Hortensia
+
+[MID_BONDSRING_H_Hortensia00]
+A representation of Hortensia's Favor.
+
+[MID_BONDSRING_Seadall]
+Seadall
+
+[MID_BONDSRING_H_Seadall00]
+A representation of Seadall's Favor.
+
+[MID_BONDSRING_Rosado]
+Rosado
+
+[MID_BONDSRING_H_Rosado00]
+A representation of Rosado's Favor.
+
+[MID_BONDSRING_Marigold]
+Marigold
+
+[MID_BONDSRING_H_Marigold00]
+A representation of Marigold's Favor.
+
+[MID_BONDSRING_Lindon]
+Lindon
+
+[MID_BONDSRING_H_Lindon00]
+A representation of Lindon's Favor.
+
+[MID_BONDSRING_Saphir]
+Saphir
+
+[MID_BONDSRING_H_Saphir00]
+A representation of Saphir's Favor.
+
+[MID_BONDSRING_Veyle]
+Veyle
+
+[MID_BONDSRING_H_Veyle00]
+A representation of Veyle's Favor.
+
+[MID_BONDSRING_Mauvier]
+Mauvier
+
+[MID_BONDSRING_H_Mauvier00]
+A representation of Mauvier's Favor.
+
+[MID_BONDSRING_Anna]
+Anna
+
+[MID_BONDSRING_H_Anna00]
+A representation of Anna's Favor.
+
+[MID_BONDSRING_Jean]
+Jean
+
+[MID_BONDSRING_H_Jean00]
+A representation of Jean's Favor.
+
+[MID_BONDSRING_Nel]
+Nel
+
+[MID_BONDSRING_H_Nel00]
+A representation of Nel's Favor.
+
+[MID_BONDSRING_Rafal]
+Rafal
+
+[MID_BONDSRING_H_Rafal00]
+A representation of Rafal's Favor.
+
+[MID_BONDSRING_Zelestia]
+Zelestia
+
+[MID_BONDSRING_H_Zelestia00]
+A representation of Zelestia's Favor.
+
+[MID_BONDSRING_Gregory]
+Gregory
+
+[MID_BONDSRING_H_Gregory00]
+A representation of Gregory's Favor.
+
+[MID_BONDSRING_Madeline]
+Madeline
+
+[MID_BONDSRING_H_Madeline00]
+A representation of Madeline's Favor.
+
+
