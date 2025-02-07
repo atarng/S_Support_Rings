@@ -323,6 +323,7 @@ pub fn unit_updatestateimpl(this: &Unit, is_auto_equip: bool, equipped: Option<&
 
     if let Some(unit_ring) = this.get_ring() {
         if let Some(god) = this.get_god_unit() {
+            // Add Skills
             let ring_data = unit_ring.fields.data;
             let skills_to_add = ring_data.get_equip_skills();
             for x in 0..skills_to_add.len() {
@@ -340,6 +341,13 @@ pub fn unit_updatestateimpl(this: &Unit, is_auto_equip: bool, equipped: Option<&
     }
 
     call_original!(this, is_auto_equip, equipped, _method_info);
+
+    // Add Enhancements
+    if let Some(unit_ring) = this.get_ring() {
+    if let Some(god) = this.get_god_unit() {
+        println!("unit_updatestateimpl] add ring enhancements");
+    }
+    }
 }}
 
 //// HOOKS: END /////
@@ -417,3 +425,19 @@ pub fn main() {
     // 0x71021a03e8 e8 01 00 b4 cbz x8,LAB_71021a0424 => 0f 00 00 14 b LAB_71021a0424
     Patch::in_text(0x021a03e8).bytes([0x0f, 0x00, 0x00, 0x14]).unwrap();
 }
+
+// void App.UnitEnhanceCalculator$$Commit1st
+// 0x7101f74b40
+
+
+// void App.Unit$$CommitEnhance(App_Unit_o *__this,App_UnitItem_o *equipped,MethodInfo *method)
+// 0x7101a1aae0
+
+// void App.Unit$$CommitEnhance(App_Unit_o *__this,App_UnitItem_o *equipped,MethodInfo *method)
+// 0x7101a1aae0
+// Sets Ring: 0x7101a1b858
+// GodBranch:
+// 0x7101a1b508 74 00 00 b5     cbnz       x20,LAB_7101a1b514
+// &
+// 0x7101a1b510 54 1a 00 b4     cbz        x20,LAB_7101a1b858
+
