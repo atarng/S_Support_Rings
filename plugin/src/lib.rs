@@ -3,10 +3,10 @@
 // use cobapi::*;
 use engage::{
     // menu::{BasicMenu, BasicMenuItem},
-    // dialog::yesno::BasicDialogItemYes,
+    dialog::yesno::BasicDialogItemYes,
     force::*,
     gamedata::{ // Gamedata, JobData, PersonData,
-        unit::{Unit, // GodUnit,
+        unit::{Unit, GodUnit,
             UnitEnhanceCalculator, UnitEnhanceFactors, UnitEnhanceValues, 
             UnitRing},
         item::*,
@@ -14,6 +14,7 @@ use engage::{
         ring::RingData,
         skill::*,
     },
+    proc::ProcInst,
     // singleton::SingletonClass,
     script::*,
     stream::Stream,
@@ -439,20 +440,23 @@ pub fn main() {
     install_hook!(infoutil_getskilllistforunitinfo);
     install_hook!(unit_updatestateimpl);
 
+    // Hooks to dynamically adjust behavior of clearing old rings.
+    install_hook!(ringselectconfirmdialog_createbindgod);
+    install_hook!(ringselectconfirmdialog_createbindring);
+
+    //// BEG: From TeaRistan's 5 Skill Slots
     // checks in add skill for max count (3 now)
     // 0x7101a35fd0: 1f 05 00 71 => 1f 11, 00, 71
     Patch::in_text(0x01a35fd0).bytes(&[0x1f, 0x09, 0x00, 0x71]).unwrap();
     // 0x7101a35ff8 : 1f 05 00 71 => 1f 11, 00, 71
     Patch::in_text(0x01a35ff8).bytes(&[0x1f, 0x09, 0x00, 0x71]).unwrap();
-    //// make eskill list only 5 items in the UI
-    // 0x7102499c8c 40 03 40 f9 ldr super,[x26] => b  #0xdc // 7102499d68
-    // Patch::in_text(0x02499c8c).bytes(&[0x37, 0x00, 0x00, 0x14]).unwrap();
-
     // // remove the 2nd index skip when 1st index is empty 
     // // from the equip menu
     // 0x710249d318 01 03 00 54 b.ne LAB_710249d378 => b #0x60 // LAB_710249d378
     Patch::in_text(0x0249d318).bytes(&[0x18, 0x00, 0x00, 0x14]).unwrap();
+    //// END: From TeaRistan's 5 Skill Slots
     
+    // void App.Unit$$SetRing(App_Unit_o *__this,App_UnitRing_o *ring,MethodInfo *method)
     // don't unset god unit when setting ring:: Skip Over it.
     // 0x7101a4e044 40 02 00 b4 cbz __this,LAB_7101a4e08c => b LAB_7101a4e08c
     Patch::in_text(0x01a4e044).bytes([0x12, 0x00, 0x00, 0x14]).unwrap();
@@ -461,17 +465,56 @@ pub fn main() {
     // 0x7101a51928 40 02 00 b4 cbz __this,LAB_7101a51970 => 12 00 00 14 nop 
     Patch::in_text(0x01a51928).bytes([0x12, 0x00, 0x00, 0x14]).unwrap();
 
-    // Don't call removeold:
-    // When Setting God, Don't Remove Old?
-    // 0x7101d602e0 cc 01 00 94 bl App.RingSelectConfirmDialog.ConfirmYesDialogIt => 1f 20 03 d5  nop
-    Patch::in_text(0x01d602e0).bytes([0x1f, 0x20, 0x03, 0xd5]).unwrap();
-
-    // Don't Call Remove Old... when something? I forget. but I think it was important.
+    //// EDITS TO:
+    //// int32_t App.RingSelectConfirmDialog.ConfirmYesDialogItem$$ACall
+    ////          (App_RingSelectConfirmDialog_ConfirmYesDialogItem_o *__this,MethodInfo *method)
+    // Don't Call Remove Old... when Setting new God... Confirmed?
     // 0x7101d5fc34 77 03 00 94 bl App.RingSelectConfirmDialog.ConfirmYesDialogIt => 1f 20 03 d5 nop
     Patch::in_text(0x01d5fc34).bytes([0x1f, 0x20, 0x03, 0xd5]).unwrap();
+    // Don't call removeold: when setting God (unconfirmed)
+    // 0x7101d602e0 cc 01 00 94 bl App.RingSelectConfirmDialog.ConfirmYesDialogIt => 1f 20 03 d5  nop
+    // Patch::in_text(0x01d602e0).bytes([0x1f, 0x20, 0x03, 0xd5]).unwrap();
 
-    // Don't Clear Ring when setting God Unit (from Script?)
+    //// EDIT TO:
+    //// void App.ScriptUnit$$UnitSetGodUnit(MoonSharp_Interpreter_DynValue_array *args,MethodInfo *method)
+    // Don't Clear Ring when setting God Unit
+    // (from Script? Honestly this one might not b important)
     // 0x71021a03e8 e8 01 00 b4 cbz x8,LAB_71021a0424 => 0f 00 00 14 b LAB_71021a0424
     Patch::in_text(0x021a03e8).bytes([0x0f, 0x00, 0x00, 0x14]).unwrap();
 }
 
+#[unity::class("App", "RingSelectConfirmDialog")]
+pub struct RingSelectConfirmDialog {
+}
+
+// void App.RingSelectConfirmDialog$$CreateBindGod (App_ProcInst_o *super,App_Unit_o *unit,App_GodUnit_o *nextGod,MethodInfo *method);
+// 0x7102431c10
+#[skyline::hook(offset=0x02431c10)]
+pub fn ringselectconfirmdialog_createbindgod(supper: &ProcInst, unit: Option<&Unit>, next_god: Option<&GodUnit>, method_info: OptionalMethod) {
+    println!("[ringselectconfirmdialog_createbindgod/BEG] Modify RemoveOld to only Clear God");
+
+    call_original!(supper, unit, next_god, method_info);
+
+    // [GOD] 0x7101d60abc 81 ba f3 97 bl App.Unit$$ClearGodUnit => nop. Restore God Instruction.
+    // [RING] 7101d60b18 62 f3 fb 17 => c0 03 5f d6 ret
+    Patch::in_text(0x01d60abc).bytes([0x81, 0xba, 0xf3, 0x97]).unwrap();
+    Patch::in_text(0x01d60b18).bytes([0xc0, 0x03, 0x5f, 0xd6]).unwrap();
+
+    println!("[ringselectconfirmdialog_createbindgod/END]");
+}
+
+// void App.RingSelectConfirmDialog$$CreateBindRing (App_ProcInst_o *super,App_Unit_o *unit,App_UnitRing_o *nextRing,MethodInfo *method);
+// 0x71024323d0
+#[skyline::hook(offset=0x024323d0)]
+pub fn ringselectconfirmdialog_createbindring(supper: &ProcInst, unit: Option<&Unit>, next_ring: Option<&UnitRing>, method_info: OptionalMethod) {
+    println!("[ringselectconfirmdialog_createbindring/BEG] Modify RemoveOld to only Clear Ring");
+
+    call_original!(supper, unit, next_ring, method_info);
+
+    // [GOD] 0x7101d60abc 81 ba f3 97 bl App.Unit$$ClearGodUnit => nop
+    // [RING] 7101d60b18 62 f3 fb 17 => b App.UnitRingPool$$ClearOwner void App.UnitRingPool$$ClearOwne
+    Patch::in_text(0x01d60abc).bytes([0x1f, 0x20, 0x03, 0xd5]).unwrap();
+    Patch::in_text(0x01d60b18).bytes([0x62, 0xf3, 0xfb, 0x17]).unwrap();
+
+    println!("[ringselectconfirmdialog_createbindring/END]");
+}

@@ -1,0 +1,1147 @@
+                             **************************************************************
+                             *                          FUNCTION                          *
+                             **************************************************************
+                             int32_t App.RingSelectConfirmDialog.ConfirmYesDialogItem
+             int32_t           w0:4           <RETURN>
+             App_RingSelect    x0:8           __this
+             MethodInfo *      x1:8           method
+             undefined8        Stack[-0x10]:8 local_10                                XREF[2]:     7101d5fa30(W), 
+                                                                                                   7101d608e0(R)  
+             undefined8        Stack[-0x20]:8 local_20                                XREF[2]:     7101d5fa2c(W), 
+                                                                                                   7101d608e4(R)  
+             undefined8        Stack[-0x30]:8 local_30                                XREF[2]:     7101d5fa28(W), 
+                                                                                                   7101d608e8(R)  
+             undefined8        Stack[-0x40]:8 local_40                                XREF[2]:     7101d5fa24(W), 
+                                                                                                   7101d608ec(R)  
+             undefined8        Stack[-0x50]:8 local_50                                XREF[2]:     7101d5fa20(W), 
+                                                                                                   7101d608f0(R)  
+             undefined8        Stack[-0x60]:8 local_60                                XREF[2]:     7101d5fa18(W), 
+                                                                                                   7101d608f4(*)  
+             undefined8        Stack[-0x68]:8 local_68                                XREF[2]:     7101d60370(W), 
+                                                                                                   7101d60490(R)  
+             undefined8        Stack[-0x70]:8 local_70                                XREF[2]:     7101d5fa14(W), 
+                                                                                                   7101d608d8(R)  
+             undefined8        Stack[-0x80]:8 local_80                                XREF[4]:     7101d5fbcc(W), 
+                                                                                                   7101d603b4(W), 
+                                                                                                   7101d6056c(W), 
+                                                                                                   7101d60764(W)  
+             undefined8        Stack[-0x88]:8 local_88                                XREF[3]:     7101d603e4(R), 
+                                                                                                   7101d605a4(R), 
+                                                                                                   7101d6079c(R)  
+             undefined8        Stack[-0x90]:8 local_90                                XREF[4]:     7101d5fbd8(W), 
+                                                                                                   7101d603c0(W), 
+                                                                                                   7101d60564(W), 
+                                                                                                   7101d6075c(W)  
+             undefined8        Stack[-0x98]:8 local_98                                XREF[4]:     7101d5fbd0(W), 
+                                                                                                   7101d603bc(W), 
+                                                                                                   7101d60560(W), 
+                                                                                                   7101d60758(W)  
+             undefined4        Stack[-0x9c]:4 local_9c                                XREF[9]:     7101d5fbd4(W), 
+                                                                                                   7101d6046c(W), 
+                                                                                                   7101d60484(W), 
+                                                                                                   7101d605fc(R), 
+                                                                                                   7101d60608(W), 
+                                                                                                   7101d60640(W), 
+                                                                                                   7101d607fc(R), 
+                                                                                                   7101d60808(W), 
+                                                                                                   7101d60838(W)  
+             undefined4        Stack[-0xa8]:4 local_a8                                XREF[2]:     7101d60468(W), 
+                                                                                                   7101d605f8(W)  
+             undefined8        Stack[-0xb0]:8 local_b0                                XREF[3]:     7101d603b0(R), 
+                                                                                                   7101d60568(R), 
+                                                                                                   7101d60760(R)  
+             undefined8        Stack[-0xc0]:8 local_c0                                XREF[3]:     7101d603a8(R), 
+                                                                                                   7101d60558(R), 
+                                                                                                   7101d60750(R)  
+             undefined8        Stack[-0xd0]:8 local_d0                                XREF[4]:     7101d6012c(W), 
+                                                                                                   7101d603b8(R), 
+                                                                                                   7101d6055c(R), 
+                                                                                                   7101d60754(R)  
+                             App.RingSelectConfirmDialog.ConfirmYesDialogIt  XREF[1]:     7105f3e558(*)  
+      7101d5fa10 ff 43 03 d1     sub        sp,sp,#0xd0
+      7101d5fa14 e8 33 00 fd     str        d8,[sp, #local_70]
+      7101d5fa18 fd 7b 07 a9     stp        x29,x30,[sp, #local_60]
+      7101d5fa1c fd c3 01 91     add        x29,sp,#0x70
+      7101d5fa20 fc 6f 08 a9     stp        x28,x27,[sp, #local_50]
+      7101d5fa24 fa 67 09 a9     stp        x26,x25,[sp, #local_40]
+      7101d5fa28 f8 5f 0a a9     stp        x24,x23,[sp, #local_30]
+      7101d5fa2c f6 57 0b a9     stp        x22,x21,[sp, #local_20]
+      7101d5fa30 f4 4f 0c a9     stp        x20,x19,[sp, #local_10]
+      7101d5fa34 b3 2d 02 d0     adrp       x19,0x7106315000
+      7101d5fa38 b6 29 02 d0     adrp       x22,0x7106295000
+      7101d5fa3c 68 ee 62 39     ldrb       w8,[x19, #0x8bb]=>DAT_71063158bb                 = ??
+      7101d5fa40 d6 d2 43 f9     ldr        x22,[x22, #0x7a0]=>->App.RingSelectConfirmDial   = 710615ab90
+      7101d5fa44 f8 03 00 aa     mov        x24,__this
+      7101d5fa48 08 0c 00 37     tbnz       w8,#0x0,LAB_7101d5fbc8
+      7101d5fa4c a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa50 00 d4 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CE7h
+                                                                                             = 710616a618
+      7101d5fa54 83 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fa58 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa5c 00 d8 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CE9h
+                                                                                             = 710616a620
+      7101d5fa60 80 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fa64 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa68 00 dc 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CEBh
+                                                                                             = 710616a628
+      7101d5fa6c 7d c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fa70 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa74 00 e0 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CEDh
+                                                                                             = 710616a630
+      7101d5fa78 7a c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fa7c a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa80 00 e4 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CEFh
+                                                                                             = 710616a638
+      7101d5fa84 77 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fa88 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa8c 00 e8 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CE5h
+                                                                                             = 710616a610
+      7101d5fa90 74 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fa94 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fa98 00 ec 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C0007CF1h
+                                                                                             = 710616a640
+      7101d5fa9c 71 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5faa0 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5faa4 00 f0 43 f9     ldr        __this=>System.Collections.Generic.Dictionary<   = 00000000200036DDh
+                                                                                             = 7106150760
+      7101d5faa8 6e c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5faac a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fab0 00 f4 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C000C237h
+                                                                                             = 710616f700
+      7101d5fab4 6b c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fab8 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fabc 00 f8 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 00000000C000C239h
+                                                                                             = 710616f708
+      7101d5fac0 68 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fac4 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fac8 00 fc 43 f9     ldr        __this=>Method$System.Collections.Generic.Dict   = 3Bh    ;
+                                                                                             = 710616f710
+      7101d5facc 65 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fad0 20 29 02 f0     adrp       __this,0x7106286000
+      7101d5fad4 00 ec 41 f9     ldr        __this=>App.GameSound_TypeInfo,[__this->klass,   = 000000002000C091h
+                                                                                             = 7106157a10
+      7101d5fad8 62 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fadc a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fae0 00 00 44 f9     ldr        __this=>Method$System.Collections.Generic.KeyV   = A9h
+                                                                                             = 7106173248
+      7101d5fae4 5f c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fae8 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5faec 00 04 44 f9     ldr        __this=>Method$System.Collections.Generic.KeyV   = ABh
+                                                                                             = 7106173250
+      7101d5faf0 5c c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5faf4 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5faf8 00 08 44 f9     ldr        __this=>App.SortieSequenceRingSelect.Label_Typ   = 0000000020013A59h
+                                                                                             = 7106161ea8
+      7101d5fafc 59 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb00 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fb04 00 d0 43 f9     ldr        __this=>App.RingSelectConfirmDialog_TypeInfo,[   = 000000002000E84Fh
+                                                                                             = 710615ab90
+      7101d5fb08 56 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb0c 80 29 02 b0     adrp       __this,0x7106290000
+      7101d5fb10 00 18 40 f9     ldr        __this=>App.RingSelectMenu_TypeInfo,[__this->k   = 000000002000E851h
+                                                                                             = 710615ab98
+      7101d5fb14 53 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb18 20 29 02 f0     adrp       __this,0x7106286000
+      7101d5fb1c 00 20 45 f9     ldr        __this=>Method$App.SingletonClass<>.get_Instan   = 00000000C002157Fh
+                                                                                             = 710617b990
+      7101d5fb20 50 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb24 20 29 02 f0     adrp       __this,0x7106286000
+      7101d5fb28 00 24 45 f9     ldr        __this=>App.SingletonClass<>_TypeInfo,[__this-   = 0000000020007473h
+                                                                                             = 71061530c0
+      7101d5fb2c 4d c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb30 60 29 02 90     adrp       __this,0x710628b000
+      7101d5fb34 00 38 46 f9     ldr        __this=>Method$App.SingletonProcInst<>.get_Ins   = 00000000C002203Dh
+                                                                                             = 710617c8a8
+      7101d5fb38 4a c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb3c 60 29 02 90     adrp       __this,0x710628b000
+      7101d5fb40 00 3c 46 f9     ldr        __this=>App.SingletonProcInst<>_TypeInfo,[__th   = 00000000200075E7h
+                                                                                             = 7106153620
+      7101d5fb44 47 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb48 40 29 02 f0     adrp       __this,0x710628a000
+      7101d5fb4c 00 a0 44 f9     ldr        __this=>App.UnitInfo_TypeInfo,[__this->klass,    = 2000fa17
+                                                                                             = 710615c0b8
+      7101d5fb50 44 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb54 60 29 02 90     adrp       __this,0x710628b000
+      7101d5fb58 00 d8 45 f9     ldr        __this=>Ring_Decide,[__this->klass, #0xbb0]=>-   = 00000000A0004909h
+                                                                                             = 71061b80a8
+      7101d5fb5c 41 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb60 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fb64 00 0c 44 f9     ldr        __this=>V_Engage_Decide,[__this->klass, #0x818   = 00000000A0005C93h
+                                                                                             = 71061bcec8
+      7101d5fb68 3e c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb6c a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fb70 00 10 44 f9     ldr        __this=>PlayerF,[__this->klass, #0x820]=>->Pla   = 00000000A00044A7h
+                                                                                             = 71061b6f20
+      7101d5fb74 3b c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb78 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fb7c 00 14 44 f9     ldr        __this=>Lueur1,[__this->klass, #0x828]=>->Lueur1 = 00000000A0002DCBh
+                                                                                             = 71061b13b0
+      7101d5fb80 38 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb84 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fb88 00 18 44 f9     ldr        __this=>Lueur,[__this->klass, #0x830]=>->Lueur   = 00000000A0002DC9h
+                                                                                             = 71061b13a8
+      7101d5fb8c 35 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb90 60 29 02 90     adrp       __this,0x710628b000
+      7101d5fb94 00 f0 45 f9     ldr        __this=>EquipRing_Off,[__this->klass, #0xbe0]=   = 00000000A0001C0Bh
+                                                                                             = 71061accc0
+      7101d5fb98 32 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fb9c a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fba0 00 1c 44 f9     ldr        __this=>PlayerM,[__this->klass, #0x838]=>->Pla   = 00000000A00044ABh
+                                                                                             = 71061b6f30
+      7101d5fba4 2f c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fba8 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fbac 00 20 44 f9     ldr        __this=>EquipRing_On,[__this->klass, #0x840]=>   = 00000000A0001C0Dh
+                                                                                             = 71061accc8
+      7101d5fbb0 2c c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fbb4 a0 29 02 d0     adrp       __this,0x7106295000
+      7101d5fbb8 00 24 44 f9     ldr        __this=>V_Engage_Respond,[__this->klass, #0x84   = 00000000A0005C95h
+                                                                                             = 71061bced0
+      7101d5fbbc 29 c9 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fbc0 28 00 80 52     mov        w8,#0x1
+      7101d5fbc4 68 ee 22 39     strb       w8,[x19, #0x8bb]=>DAT_71063158bb                 = ??
+                             LAB_7101d5fbc8                                  XREF[1]:     7101d5fa48(j)  
+      7101d5fbc8 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5fbcc ff 7f 05 a9     stp        xzr,xzr,[sp, #local_80]
+      7101d5fbd0 ff 1f 00 f9     str        xzr,[sp, #local_98]
+      7101d5fbd4 ff 37 00 b9     str        wzr,[sp, #local_9c]
+      7101d5fbd8 ff 7f 04 a9     stp        xzr,xzr,[sp, #local_90]
+      7101d5fbdc 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5fbe0 68 00 08 36     tbz        w8,#0x1,LAB_7101d5fbec
+      7101d5fbe4 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5fbe8 88 15 00 34     cbz        w8,LAB_7101d5fe98
+                             LAB_7101d5fbec                                  XREF[1]:     7101d5fbe0(j)  
+      7101d5fbec 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5fbf0 09 05 40 f9     ldr        x9,[x8, #0x8]
+      7101d5fbf4 c9 15 00 b4     cbz        x9,LAB_7101d5feac
+                             LAB_7101d5fbf8                                  XREF[1]:     7101d5fea8(j)  
+      7101d5fbf8 09 cc 44 39     ldrb       w9,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5fbfc 69 00 08 36     tbz        w9,#0x1,LAB_7101d5fc08
+      7101d5fc00 09 e0 40 b9     ldr        w9,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5fc04 a9 1c 00 34     cbz        w9,LAB_7101d5ff98
+                             LAB_7101d5fc08                                  XREF[1]:     7101d5fbfc(j)  
+      7101d5fc08 0a 01 40 f9     ldr        x10,[x8]
+      7101d5fc0c 49 6d 40 f9     ldr        x9,[x10, #0xd8]
+      7101d5fc10 09 1d 00 b4     cbz        x9,LAB_7101d5ffb0
+                             LAB_7101d5fc14                                  XREF[1]:     7101d5ffac(j)  
+      7101d5fc14 0a 05 40 f9     ldr        x10,[x8, #0x8]
+      7101d5fc18 3f 01 0a eb     cmp        x9,x10
+      7101d5fc1c 08 64 42 79     ldrh       w8,[__this->klass, #0x132]=>DAT_2000e981
+      7101d5fc20 20 1d 00 54     b.eq       LAB_7101d5ffc4
+                             LAB_7101d5fc24                                  XREF[1]:     7101d5ffc0(j)  
+      7101d5fc24 88 00 48 36     tbz        w8,#0x9,LAB_7101d5fc34
+      7101d5fc28 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5fc2c 48 00 00 35     cbnz       w8,LAB_7101d5fc34
+      7101d5fc30 54 c9 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d5fc34                                  XREF[2]:     7101d5fc24(j), 7101d5fc2c(j)  
+      7101d5fc34 1f 20 03 d5     nop        
+      7101d5fc38 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5fc3c 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5fc40 08 05 40 f9     ldr        x8,[x8, #0x8]
+      7101d5fc44 08 15 40 f9     ldr        x8,[x8, #0x28]
+      7101d5fc48 c8 01 00 b4     cbz        x8,LAB_7101d5fc80
+      7101d5fc4c 09 cc 44 39     ldrb       w9,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5fc50 09 01 08 36     tbz        w9,#0x1,LAB_7101d5fc70
+      7101d5fc54 09 e0 40 b9     ldr        w9,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5fc58 c9 00 00 35     cbnz       w9,LAB_7101d5fc70
+      7101d5fc5c 49 c9 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5fc60 c8 02 40 f9     ldr        x8,[x22]=>App.RingSelectConfirmDialog_TypeInfo   = 000000002000E84Fh
+      7101d5fc64 08 5d 40 f9     ldr        x8,[x8, #0xb8]=>DAT_2000e907
+      7101d5fc68 08 05 40 f9     ldr        x8,[x8, #0x8]
+      7101d5fc6c 08 15 40 f9     ldr        x8,[x8, #0x28]
+                             LAB_7101d5fc70                                  XREF[2]:     7101d5fc50(j), 7101d5fc58(j)  
+      7101d5fc70 e0 03 08 aa     mov        __this,x8
+      7101d5fc74 e1 03 1f aa     mov        method,xzr
+      7101d5fc78 12 be f3 97     bl         App.Unit$$ClearGodUnit                           void App.Unit$$ClearGodUnit(App_
+      7101d5fc7c c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d5fc80                                  XREF[1]:     7101d5fc48(j)  
+      7101d5fc80 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5fc84 a8 00 08 36     tbz        w8,#0x1,LAB_7101d5fc98
+      7101d5fc88 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5fc8c 68 00 00 35     cbnz       w8,LAB_7101d5fc98
+      7101d5fc90 3c c9 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5fc94 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d5fc98                                  XREF[2]:     7101d5fc84(j), 7101d5fc8c(j)  
+      7101d5fc98 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5fc9c e2 03 1f aa     mov        x2,xzr
+      7101d5fca0 00 05 40 a9     ldp        __this,method,[x8]
+      7101d5fca4 37 bd f3 97     bl         App.Unit$$SetGodUnit                             void App.Unit$$SetGodUnit(App_Un
+      7101d5fca8 59 29 02 f0     adrp       x25,0x710628a000
+      7101d5fcac 39 a3 44 f9     ldr        x25,[x25, #0x940]=>->App.UnitInfo_TypeInfo       = 710615c0b8
+      7101d5fcb0 20 03 40 f9     ldr        __this=>DAT_2000fa17,[x25]=>App.UnitInfo_TypeI   = 2000fa17
+      7101d5fcb4 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000fb4a
+      7101d5fcb8 88 00 08 36     tbz        w8,#0x1,LAB_7101d5fcc8
+      7101d5fcbc 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000faf7
+      7101d5fcc0 48 00 00 35     cbnz       w8,LAB_7101d5fcc8
+      7101d5fcc4 2f c9 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d5fcc8                                  XREF[2]:     7101d5fcb8(j), 7101d5fcc0(j)  
+      7101d5fcc8 a8 99 99 52     mov        w8,#0xcccd
+      7101d5fccc 88 d9 a7 72     movk       w8,#0x3ecc, LSL #16
+      7101d5fcd0 08 01 27 1e     fmov       s8,w8
+      7101d5fcd4 00 1d a8 4e     mov        v0.16B,v8.16B
+      7101d5fcd8 e0 03 1f 2a     mov        __this,wzr
+      7101d5fcdc e1 03 1f aa     mov        method,xzr
+      7101d5fce0 a0 a0 08 94     bl         App.UnitInfo$$SetStatusAnime                     void App.UnitInfo$$SetStatusAnim
+      7101d5fce4 00 1d a8 4e     mov        v0.16B,v8.16B
+      7101d5fce8 20 00 80 52     mov        __this,#0x1
+      7101d5fcec e1 03 1f aa     mov        method,xzr
+      7101d5fcf0 9c a0 08 94     bl         App.UnitInfo$$SetStatusAnime                     void App.UnitInfo$$SetStatusAnim
+      7101d5fcf4 c8 02 40 f9     ldr        x8,[x22]=>App.RingSelectConfirmDialog_TypeInfo   = 000000002000E84Fh
+      7101d5fcf8 e1 03 1f aa     mov        method,xzr
+      7101d5fcfc 08 5d 40 f9     ldr        x8,[x8, #0xb8]=>DAT_2000e907
+      7101d5fd00 00 01 40 f9     ldr        __this,[x8]
+      7101d5fd04 af 5b f9 97     bl         App.AssetTable.Result$$GetForUnitInfo            App_AssetTable_Result_o * App.As
+      7101d5fd08 c8 02 40 f9     ldr        x8,[x22]=>App.RingSelectConfirmDialog_TypeInfo   = 000000002000E84Fh
+      7101d5fd0c e1 03 1f aa     mov        method,xzr
+      7101d5fd10 08 5d 40 f9     ldr        x8,[x8, #0xb8]=>DAT_2000e907
+      7101d5fd14 15 a8 40 f9     ldr        x21,[__this->klass, #0x150]
+      7101d5fd18 00 05 40 f9     ldr        __this,[x8, #0x8]
+      7101d5fd1c bd 5c f9 97     bl         App.AssetTable.Result$$GetForUnitInfo            App_AssetTable_Result_o * App.As
+      7101d5fd20 b3 29 02 d0     adrp       x19,0x7106295000
+      7101d5fd24 14 a8 40 f9     ldr        x20,[__this->klass, #0x150]
+      7101d5fd28 e0 03 15 aa     mov        __this,x21
+      7101d5fd2c 73 1a 44 f9     ldr        x19,[x19, #0x830]=>->Lueur                       = 71061b13a8
+      7101d5fd30 e2 03 1f aa     mov        x2,xzr
+      7101d5fd34 61 02 40 f9     ldr        method,[x19]=>Lueur                              = 00000000A0002DC9h
+      7101d5fd38 6e 47 68 94     bl         System.String$$op_Equality                       bool System.String$$op_Equality(
+      7101d5fd3c e0 16 00 36     tbz        __this,#0x0,LAB_7101d60018
+      7101d5fd40 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5fd44 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5fd48 68 00 08 36     tbz        w8,#0x1,LAB_7101d5fd54
+      7101d5fd4c 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5fd50 88 5d 00 34     cbz        w8,LAB_7101d60900
+                             LAB_7101d5fd54                                  XREF[1]:     7101d5fd48(j)  
+      7101d5fd54 f9 03 18 aa     mov        x25,x24
+                             LAB_7101d5fd58                                  XREF[1]:     7101d6090c(j)  
+      7101d5fd58 38 29 02 b0     adrp       x24,0x7106284000
+      7101d5fd5c 18 df 40 f9     ldr        x24,[x24, #0x1b8]=>PTR_DAT_71062841b8            = 7106314312
+      7101d5fd60 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5fd64 35 29 02 b0     adrp       x21,0x7106284000
+      7101d5fd68 3a 29 02 b0     adrp       x26,0x7106284000
+      7101d5fd6c 36 29 02 b0     adrp       x22,0x7106284000
+      7101d5fd70 b5 22 40 f9     ldr        x21,[x21, #0x40]=>->App.Unit_TypeInfo            = 710615c030
+      7101d5fd74 3b 00 80 52     mov        w27,#0x1
+      7101d5fd78 00 01 40 f9     ldr        __this,[x8]
+      7101d5fd7c 5a e3 40 f9     ldr        x26,[x26, #0x1c0]=>PTR_DAT_71062841c0            = 7106314313
+      7101d5fd80 d6 e6 40 f9     ldr        x22,[x22, #0x1c8]=>->Method$App.BitFieldTempla   = 7106166d00
+                             LAB_7101d5fd84                                  XREF[1]:     7101d5fe34(j)  
+      7101d5fd84 08 03 40 39     ldrb       w8,[x24]=>DAT_7106314312                         = ??
+      7101d5fd88 fc 03 00 aa     mov        x28,__this
+      7101d5fd8c 88 02 00 34     cbz        w8,LAB_7101d5fddc
+      7101d5fd90 48 03 40 39     ldrb       w8,[x26]=>DAT_7106314313                         = ??
+      7101d5fd94 e8 02 00 34     cbz        w8,LAB_7101d5fdf0
+                             LAB_7101d5fd98                                  XREF[2]:     7101d5fdec(j), 7101d5fdfc(j)  
+      7101d5fd98 97 0b 40 f9     ldr        x23,[x28, #0x10]
+      7101d5fd9c e0 03 17 aa     mov        __this,x23
+      7101d5fda0 e8 02 40 f9     ldr        x8,[x23]
+      7101d5fda4 09 89 58 a9     ldp        x9,x2,[x8, #0x188]
+      7101d5fda8 01 00 a1 52     mov        method,#0x8000000
+      7101d5fdac 20 01 3f d6     blr        x9
+      7101d5fdb0 e8 0a 40 f9     ldr        x8,[x23, #0x10]
+      7101d5fdb4 1f 01 00 ea     tst        x8,__this
+      7101d5fdb8 00 04 00 54     b.eq       LAB_7101d5fe38
+      7101d5fdbc 88 2b 40 f9     ldr        x8,[x28, #0x50]
+      7101d5fdc0 08 02 00 b4     cbz        x8,LAB_7101d5fe00
+      7101d5fdc4 00 21 40 b9     ldr        __this,[x8, #0x20]
+      7101d5fdc8 81 c3 41 b9     ldr        method,[x28, #0x1c0]
+      7101d5fdcc e2 03 1f aa     mov        x2,xzr
+      7101d5fdd0 20 d8 fb 97     bl         App.UnitPool$$GetFromIdent                       App_Unit_o * App.UnitPool$$GetFr
+      7101d5fdd4 00 02 00 b5     cbnz       __this,LAB_7101d5fe14
+      7101d5fdd8 18 00 00 14     b          LAB_7101d5fe38
+                             LAB_7101d5fddc                                  XREF[1]:     7101d5fd8c(j)  
+      7101d5fddc e0 03 15 aa     mov        __this=>App.Unit_TypeInfo,x21                    = 000000002000F9B9h
+      7101d5fde0 a0 c8 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fde4 1b 03 00 39     strb       w27,[x24]=>DAT_7106314312                        = ??
+      7101d5fde8 48 03 40 39     ldrb       w8,[x26]=>DAT_7106314313                         = ??
+      7101d5fdec 68 fd ff 35     cbnz       w8,LAB_7101d5fd98
+                             LAB_7101d5fdf0                                  XREF[1]:     7101d5fd94(j)  
+      7101d5fdf0 e0 03 16 aa     mov        __this=>Method$App.BitFieldTemplate64<>.Test()   = E1h
+      7101d5fdf4 9b c8 9c 97     bl         thunk_FUN_710043f8a4                             undefined thunk_FUN_710043f8a4()
+      7101d5fdf8 5b 03 00 39     strb       w27,[x26]=>DAT_7106314313                        = ??
+      7101d5fdfc e7 ff ff 17     b          LAB_7101d5fd98
+                             LAB_7101d5fe00                                  XREF[1]:     7101d5fdc0(j)  
+      7101d5fe00 e0 00 80 52     mov        __this,#0x7
+      7101d5fe04 81 c3 41 b9     ldr        method,[x28, #0x1c0]
+      7101d5fe08 e2 03 1f aa     mov        x2,xzr
+      7101d5fe0c 11 d8 fb 97     bl         App.UnitPool$$GetFromIdent                       App_Unit_o * App.UnitPool$$GetFr
+      7101d5fe10 40 01 00 b4     cbz        __this,LAB_7101d5fe38
+                             LAB_7101d5fe14                                  XREF[1]:     7101d5fdd4(j)  
+      7101d5fe14 08 28 40 f9     ldr        x8,[x0, #__this+0x50]
+      7101d5fe18 08 01 00 b4     cbz        x8,LAB_7101d5fe38
+      7101d5fe1c 08 21 40 b9     ldr        w8,[x8, #0x20]
+      7101d5fe20 08 11 00 12     and        w8,w8,#0x1f
+      7101d5fe24 1f 09 00 71     cmp        w8,#0x2
+      7101d5fe28 88 00 00 54     b.hi       LAB_7101d5fe38
+      7101d5fe2c 08 78 40 f9     ldr        x8,[__this->klass, #0xf0]
+      7101d5fe30 08 9d 40 39     ldrb       w8,[x8, #0x27]
+      7101d5fe34 88 fa 1f 37     tbnz       w8,#0x3,LAB_7101d5fd84
+                             LAB_7101d5fe38                                  XREF[5]:     7101d5fdb8(j), 7101d5fdd8(j), 
+                                                                                          7101d5fe10(j), 7101d5fe18(j), 
+                                                                                          7101d5fe28(j)  
+      7101d5fe38 a0 02 40 f9     ldr        __this=>DAT_2000f9b9,[x21]=>App.Unit_TypeInfo    = 000000002000F9B9h
+      7101d5fe3c f8 03 19 aa     mov        x24,x25
+      7101d5fe40 59 29 02 f0     adrp       x25,0x710628a000
+      7101d5fe44 96 1b 40 f9     ldr        x22,[x28, #0x30]
+      7101d5fe48 97 23 40 f9     ldr        x23,[x28, #0x40]
+      7101d5fe4c 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000faec
+      7101d5fe50 39 a3 44 f9     ldr        x25,[x25, #0x940]=>->App.UnitInfo_TypeInfo       = 710615c0b8
+      7101d5fe54 88 00 08 36     tbz        w8,#0x1,LAB_7101d5fe64
+      7101d5fe58 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000fa99
+      7101d5fe5c 48 00 00 35     cbnz       w8,LAB_7101d5fe64
+      7101d5fe60 c8 c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d5fe64                                  XREF[2]:     7101d5fe54(j), 7101d5fe5c(j)  
+      7101d5fe64 e0 03 16 aa     mov        __this,x22
+      7101d5fe68 e1 03 1f aa     mov        method,xzr
+      7101d5fe6c f5 4e 08 94     bl         App.UnitEdit$$IsEnable                           bool App.UnitEdit$$IsEnable(App_
+      7101d5fe70 c8 82 00 91     add        x8,x22,#0x20
+      7101d5fe74 e9 b2 01 91     add        x9,x23,#0x6c
+      7101d5fe78 1f 00 00 72     tst        __this,#0x1
+      7101d5fe7c 08 11 89 9a     csel       x8,x8,x9,ne
+      7101d5fe80 08 01 40 b9     ldr        w8,[x8]
+      7101d5fe84 1f 09 00 71     cmp        w8,#0x2
+      7101d5fe88 21 0c 00 54     b.ne       LAB_7101d6000c
+      7101d5fe8c a8 29 02 d0     adrp       x8,0x7106295000
+      7101d5fe90 08 11 44 f9     ldr        x8,[x8, #0x820]=>->PlayerF                       = 71061b6f20
+      7101d5fe94 60 00 00 14     b          LAB_7101d60014
+                             LAB_7101d5fe98                                  XREF[1]:     7101d5fbe8(j)  
+      7101d5fe98 ba c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5fe9c c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5fea0 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5fea4 09 05 40 f9     ldr        x9,[x8, #0x8]
+      7101d5fea8 89 ea ff b5     cbnz       x9,LAB_7101d5fbf8
+                             LAB_7101d5feac                                  XREF[1]:     7101d5fbf4(j)  
+      7101d5feac 99 29 02 b0     adrp       x25,0x7106290000
+      7101d5feb0 39 1b 40 f9     ldr        x25,[x25, #offset ->App.RingSelectMenu_TypeInfo] = 710615ab98
+      7101d5feb4 28 03 40 f9     ldr        x8,[x25]=>App.RingSelectMenu_TypeInfo            = 000000002000E851h
+      7101d5feb8 09 cd 44 39     ldrb       w9,[x8, #0x133]=>DAT_2000e984
+      7101d5febc e9 00 08 36     tbz        w9,#0x1,LAB_7101d5fed8
+      7101d5fec0 09 e1 40 b9     ldr        w9,[x8, #0xe0]=>DAT_2000e931
+      7101d5fec4 a9 00 00 35     cbnz       w9,LAB_7101d5fed8
+      7101d5fec8 e0 03 08 aa     mov        __this,x8
+      7101d5fecc ad c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5fed0 28 03 40 f9     ldr        x8,[x25]=>App.RingSelectMenu_TypeInfo            = 000000002000E851h
+      7101d5fed4 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d5fed8                                  XREF[2]:     7101d5febc(j), 7101d5fec4(j)  
+      7101d5fed8 08 5d 40 f9     ldr        x8,[x8, #0xb8]=>DAT_2000e909
+      7101d5fedc 14 09 40 f9     ldr        x20,[x8, #0x10]
+      7101d5fee0 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5fee4 a8 00 08 36     tbz        w8,#0x1,LAB_7101d5fef8
+      7101d5fee8 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5feec 68 00 00 35     cbnz       w8,LAB_7101d5fef8
+      7101d5fef0 a4 c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5fef4 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d5fef8                                  XREF[2]:     7101d5fee4(j), 7101d5feec(j)  
+      7101d5fef8 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5fefc ba 29 02 d0     adrp       x26,0x7106295000
+      7101d5ff00 e0 03 14 aa     mov        __this,x20
+      7101d5ff04 01 01 40 f9     ldr        method,[x8]
+      7101d5ff08 5a df 43 f9     ldr        x26,[x26, #0x7b8]=>->Method$System.Collections   = 710616a628
+      7101d5ff0c 42 03 40 f9     ldr        x2=>DAT_c0007ceb,[x26]=>Method$System.Collecti   = 00000000C0007CEBh
+      7101d5ff10 e0 a2 7d 94     bl         System.Collections.Generic.Dictionary<>$$Conta   undefined System.Collections.Gen
+      7101d5ff14 00 03 00 36     tbz        __this,#0x0,LAB_7101d5ff74
+      7101d5ff18 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d5ff1c 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d5ff20 a8 00 08 36     tbz        w8,#0x1,LAB_7101d5ff34
+      7101d5ff24 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d5ff28 68 00 00 35     cbnz       w8,LAB_7101d5ff34
+      7101d5ff2c 95 c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5ff30 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d5ff34                                  XREF[2]:     7101d5ff20(j), 7101d5ff28(j)  
+      7101d5ff34 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d5ff38 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5ff3c 14 09 40 f9     ldr        x20,[x8, #0x10]
+      7101d5ff40 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5ff44 a8 00 08 36     tbz        w8,#0x1,LAB_7101d5ff58
+      7101d5ff48 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5ff4c 68 00 00 35     cbnz       w8,LAB_7101d5ff58
+      7101d5ff50 8c c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5ff54 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d5ff58                                  XREF[2]:     7101d5ff44(j), 7101d5ff4c(j)  
+      7101d5ff58 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5ff5c e0 03 14 aa     mov        __this,x20
+      7101d5ff60 01 01 40 f9     ldr        method,[x8]
+      7101d5ff64 a8 29 02 d0     adrp       x8,0x7106295000
+      7101d5ff68 08 e5 43 f9     ldr        x8,[x8, #0x7c8]=>->Method$System.Collections.G   = 710616a638
+      7101d5ff6c 02 01 40 f9     ldr        x2,[x8]=>Method$System.Collections.Generic.Dic   = 00000000C0007CEFh
+      7101d5ff70 c0 a8 7d 94     bl         System.Collections.Generic.Dictionary<>$$Remove  undefined System.Collections.Gen
+                             LAB_7101d5ff74                                  XREF[1]:     7101d5ff14(j)  
+      7101d5ff74 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5ff78 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d5ff7c 68 00 08 37     tbnz       w8,#0x1,LAB_7101d5ff88
+      7101d5ff80 e8 03 1f 2a     mov        w8,wzr
+      7101d5ff84 c9 00 00 14     b          LAB_7101d602a8
+                             LAB_7101d5ff88                                  XREF[1]:     7101d5ff7c(j)  
+      7101d5ff88 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5ff8c 68 18 00 34     cbz        w8,LAB_7101d60298
+      7101d5ff90 28 00 80 52     mov        w8,#0x1
+      7101d5ff94 c5 00 00 14     b          LAB_7101d602a8
+                             LAB_7101d5ff98                                  XREF[1]:     7101d5fc04(j)  
+      7101d5ff98 7a c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d5ff9c c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d5ffa0 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d5ffa4 0a 01 40 f9     ldr        x10,[x8]
+      7101d5ffa8 49 6d 40 f9     ldr        x9,[x10, #0xd8]
+      7101d5ffac 49 e3 ff b5     cbnz       x9,LAB_7101d5fc14
+                             LAB_7101d5ffb0                                  XREF[1]:     7101d5fc10(j)  
+      7101d5ffb0 49 69 40 f9     ldr        x9,[x10, #0xd0]
+      7101d5ffb4 0a 05 40 f9     ldr        x10,[x8, #0x8]
+      7101d5ffb8 3f 01 0a eb     cmp        x9,x10
+      7101d5ffbc 08 64 42 79     ldrh       w8,[__this->klass, #0x132]=>DAT_2000e981
+      7101d5ffc0 21 e3 ff 54     b.ne       LAB_7101d5fc24
+                             LAB_7101d5ffc4                                  XREF[1]:     7101d5fc20(j)  
+      7101d5ffc4 88 00 48 36     tbz        w8,#0x9,LAB_7101d5ffd4
+      7101d5ffc8 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d5ffcc 48 00 00 35     cbnz       w8,LAB_7101d5ffd4
+      7101d5ffd0 6c c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d5ffd4                                  XREF[2]:     7101d5ffc4(j), 7101d5ffcc(j)  
+      7101d5ffd4 8f 02 00 94     bl         App.RingSelectConfirmDialog.ConfirmYesDialogIt   void App.RingSelectConfirmDialog
+      7101d5ffd8 08 0b 40 f9     ldr        x8,[x24, #0x10]
+      7101d5ffdc 08 19 40 f9     ldr        x8,[x8, #0x30]
+      7101d5ffe0 28 01 00 b4     cbz        x8,LAB_7101d60004
+      7101d5ffe4 89 29 02 b0     adrp       x9,0x7106290000
+      7101d5ffe8 29 19 40 f9     ldr        x9,[x9, #offset ->App.RingSelectMenu_TypeInfo]   = 710615ab98
+      7101d5ffec 29 01 40 f9     ldr        x9,[x9]=>App.RingSelectMenu_TypeInfo             = 000000002000E851h
+      7101d5fff0 0a 01 40 f9     ldr        x10,[x8]
+      7101d5fff4 4c b1 44 39     ldrb       w12,[x10, #0x12c]
+      7101d5fff8 2b b1 44 39     ldrb       w11,[x9, #0x12c]=>DAT_2000e97d
+      7101d5fffc 9f 01 0b 6b     cmp        w12,w11
+      7101d60000 62 0f 00 54     b.cs       LAB_7101d601ec
+                             LAB_7101d60004                                  XREF[1]:     7101d5ffe0(j)  
+      7101d60004 e0 03 1f aa     mov        __this,xzr
+      7101d60008 7e 00 00 14     b          LAB_7101d60200
+                             LAB_7101d6000c                                  XREF[1]:     7101d5fe88(j)  
+      7101d6000c a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60010 08 1d 44 f9     ldr        x8,[x8, #0x838]=>->PlayerM                       = 71061b6f30
+                             LAB_7101d60014                                  XREF[1]:     7101d5fe94(j)  
+      7101d60014 15 01 40 f9     ldr        x21,[x8]=>PlayerF                                = 00000000A00044A7h
+                                                                                             = 00000000A00044ABh
+                             LAB_7101d60018                                  XREF[1]:     7101d5fd3c(j)  
+      7101d60018 61 02 40 f9     ldr        method,[x19]=>Lueur                              = 00000000A0002DC9h
+      7101d6001c e0 03 14 aa     mov        __this,x20
+      7101d60020 e2 03 1f aa     mov        x2,xzr
+      7101d60024 b3 46 68 94     bl         System.String$$op_Equality                       bool System.String$$op_Equality(
+      7101d60028 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d6002c 08 15 44 f9     ldr        x8,[x8, #0x828]=>->Lueur1                        = 71061b13b0
+      7101d60030 08 01 40 f9     ldr        x8,[x8]=>Lueur1                                  = 00000000A0002DCBh
+      7101d60034 1f 00 00 72     tst        __this,#0x1
+      7101d60038 20 03 40 f9     ldr        __this=>DAT_2000fa17,[x25]=>App.UnitInfo_TypeI   = 2000fa17
+      7101d6003c 14 11 94 9a     csel       x20,x8,x20,ne
+      7101d60040 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000fb4a
+      7101d60044 88 00 08 36     tbz        w8,#0x1,LAB_7101d60054
+      7101d60048 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000faf7
+      7101d6004c 48 00 00 35     cbnz       w8,LAB_7101d60054
+      7101d60050 4c c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d60054                                  XREF[2]:     7101d60044(j), 7101d6004c(j)  
+      7101d60054 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60058 08 0d 44 f9     ldr        x8,[x8, #0x818]=>->V_Engage_Decide               = 71061bcec8
+      7101d6005c 03 01 40 f9     ldr        x3,[x8]=>V_Engage_Decide                         = 00000000A0005C93h
+      7101d60060 e0 03 1f 2a     mov        __this,wzr
+      7101d60064 e1 03 15 aa     mov        method,x21
+      7101d60068 e2 03 14 aa     mov        x2,x20
+      7101d6006c e4 03 1f aa     mov        x4,xzr
+      7101d60070 fc 9c 08 94     bl         App.UnitInfo$$PlayCharaVoice                     void App.UnitInfo$$PlayCharaVoic
+      7101d60074 28 29 02 d0     adrp       x8,0x7106286000
+      7101d60078 08 25 45 f9     ldr        x8,[x8, #0xa48]=>->App.SingletonClass<>_TypeInfo = 71061530c0
+      7101d6007c 00 01 40 f9     ldr        __this,[x8]=>App.SingletonClass<>_TypeInfo       = 0000000020007473h
+      7101d60080 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_200075a6
+      7101d60084 88 00 08 36     tbz        w8,#0x1,LAB_7101d60094
+      7101d60088 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_20007553
+      7101d6008c 48 00 00 35     cbnz       w8,LAB_7101d60094
+      7101d60090 3c c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d60094                                  XREF[2]:     7101d60084(j), 7101d6008c(j)  
+      7101d60094 28 29 02 d0     adrp       x8,0x7106286000
+      7101d60098 08 21 45 f9     ldr        x8,[x8, #0xa40]=>->Method$App.SingletonClass<>   = 710617b990
+      7101d6009c 00 01 40 f9     ldr        __this,[x8]=>Method$App.SingletonClass<>.get_I   = 00000000C002157Fh
+      7101d600a0 0c 9b 91 97     bl         FUN_71001c6cd0                                   undefined FUN_71001c6cd0()
+      7101d600a4 a0 02 00 b4     cbz        __this,LAB_7101d600f8
+      7101d600a8 08 14 40 f9     ldr        x8,[x0, #__this+0x28]
+      7101d600ac 68 02 00 b4     cbz        x8,LAB_7101d600f8
+      7101d600b0 09 6d 40 f9     ldr        x9,[x8, #0xd8]
+      7101d600b4 69 00 00 b5     cbnz       x9,LAB_7101d600c0
+      7101d600b8 08 69 40 f9     ldr        x8,[x8, #0xd0]
+      7101d600bc e8 01 00 b4     cbz        x8,LAB_7101d600f8
+                             LAB_7101d600c0                                  XREF[1]:     7101d600b4(j)  
+      7101d600c0 20 03 40 f9     ldr        __this=>DAT_2000fa17,[x25]=>App.UnitInfo_TypeI   = 2000fa17
+      7101d600c4 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000fb4a
+      7101d600c8 88 00 08 36     tbz        w8,#0x1,LAB_7101d600d8
+      7101d600cc 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000faf7
+      7101d600d0 48 00 00 35     cbnz       w8,LAB_7101d600d8
+      7101d600d4 2b c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d600d8                                  XREF[2]:     7101d600c8(j), 7101d600d0(j)  
+      7101d600d8 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d600dc 08 25 44 f9     ldr        x8,[x8, #0x848]=>->V_Engage_Respond              = 71061bced0
+      7101d600e0 03 01 40 f9     ldr        x3,[x8]=>V_Engage_Respond                        = 00000000A0005C95h
+      7101d600e4 20 00 80 52     mov        __this,#0x1
+      7101d600e8 e1 03 14 aa     mov        method,x20
+      7101d600ec e2 03 1f aa     mov        x2,xzr
+      7101d600f0 e4 03 1f aa     mov        x4,xzr
+      7101d600f4 1f 9d 08 94     bl         App.UnitInfo$$ReserveCharaVoice                  void App.UnitInfo$$ReserveCharaV
+                             LAB_7101d600f8                                  XREF[3]:     7101d600a4(j), 7101d600ac(j), 
+                                                                                          7101d600bc(j)  
+      7101d600f8 48 29 02 f0     adrp       x8,0x710628b000
+      7101d600fc 08 3d 46 f9     ldr        x8,[x8, #0xc78]=>->App.SingletonProcInst<>_Typ   = 7106153620
+      7101d60100 00 01 40 f9     ldr        __this=>DAT_200075e7,[x8]=>App.SingletonProcIn   = 00000000200075E7h
+      7101d60104 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000771a
+      7101d60108 88 00 08 36     tbz        w8,#0x1,LAB_7101d60118
+      7101d6010c 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_200076c7
+      7101d60110 48 00 00 35     cbnz       w8,LAB_7101d60118
+      7101d60114 1b c8 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d60118                                  XREF[2]:     7101d60108(j), 7101d60110(j)  
+      7101d60118 48 29 02 f0     adrp       x8,0x710628b000
+      7101d6011c 08 39 46 f9     ldr        x8,[x8, #0xc70]=>->Method$App.SingletonProcIns   = 710617c8a8
+      7101d60120 00 01 40 f9     ldr        __this,[x8]=>Method$App.SingletonProcInst<>.ge   = 00000000C002203Dh
+      7101d60124 93 46 92 97     bl         FUN_71001f1b70                                   undefined FUN_71001f1b70()
+      7101d60128 28 00 80 52     mov        w8,#0x1
+      7101d6012c e8 03 00 b9     str        w8,[sp]=>local_d0
+      7101d60130 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60134 08 09 44 f9     ldr        x8,[x8, #0x810]=>->App.SortieSequenceRingSelec   = 7106161ea8
+      7101d60138 f4 03 00 aa     mov        x20,__this
+      7101d6013c 00 01 40 f9     ldr        __this,[x8]=>App.SortieSequenceRingSelect.Labe   = 0000000020013A59h
+      7101d60140 e1 03 00 91     mov        method,sp
+      7101d60144 1f c8 9c 97     bl         thunk_FUN_7100429ce8                             System_ValueType_o * thunk_FUN_7
+      7101d60148 e1 03 00 aa     mov        method,__this
+      7101d6014c e0 03 14 aa     mov        __this,x20
+      7101d60150 e2 03 1f aa     mov        x2,xzr
+      7101d60154 c7 fa 2a 94     bl         App.ProcInst$$Jump                               void App.ProcInst$$Jump(App_Proc
+      7101d60158 08 0b 40 f9     ldr        x8,[x24, #0x10]
+      7101d6015c 08 19 40 f9     ldr        x8,[x8, #0x30]
+      7101d60160 28 01 00 b4     cbz        x8,LAB_7101d60184
+      7101d60164 89 29 02 90     adrp       x9,0x7106290000
+      7101d60168 29 19 40 f9     ldr        x9,[x9, #offset ->App.RingSelectMenu_TypeInfo]   = 710615ab98
+      7101d6016c 29 01 40 f9     ldr        x9,[x9]=>App.RingSelectMenu_TypeInfo             = 000000002000E851h
+      7101d60170 0a 01 40 f9     ldr        x10,[x8]
+      7101d60174 4c b1 44 39     ldrb       w12,[x10, #0x12c]
+      7101d60178 2b b1 44 39     ldrb       w11,[x9, #0x12c]=>DAT_2000e97d
+      7101d6017c 9f 01 0b 6b     cmp        w12,w11
+      7101d60180 62 00 00 54     b.cs       LAB_7101d6018c
+                             LAB_7101d60184                                  XREF[1]:     7101d60160(j)  
+      7101d60184 e0 03 1f aa     mov        __this,xzr
+      7101d60188 06 00 00 14     b          LAB_7101d601a0
+                             LAB_7101d6018c                                  XREF[1]:     7101d60180(j)  
+      7101d6018c 4a 65 40 f9     ldr        x10,[x10, #0xc8]
+      7101d60190 4a 0d 0b 8b     add        x10,x10,x11, LSL #0x3
+      7101d60194 4a 81 5f f8     ldur       x10,[x10, #-0x8]
+      7101d60198 5f 01 09 eb     cmp        x10,x9
+      7101d6019c 00 01 9f 9a     csel       __this,x8,xzr,eq
+                             LAB_7101d601a0                                  XREF[1]:     7101d60188(j)  
+      7101d601a0 e1 03 1f 2a     mov        method,wzr
+      7101d601a4 e2 03 1f aa     mov        x2,xzr
+      7101d601a8 a6 f9 1b 94     bl         App.BasicMenu$$RebuildInstant                    void App.BasicMenu$$RebuildInsta
+      7101d601ac 28 29 02 d0     adrp       x8,0x7106286000
+      7101d601b0 08 ed 41 f9     ldr        x8,[x8, #0x3d8]=>->App.GameSound_TypeInfo        = 7106157a10
+      7101d601b4 00 01 40 f9     ldr        __this,[x8]=>App.GameSound_TypeInfo              = 000000002000C091h
+      7101d601b8 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000c1c4
+      7101d601bc 88 00 08 36     tbz        w8,#0x1,LAB_7101d601cc
+      7101d601c0 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000c171
+      7101d601c4 48 00 00 35     cbnz       w8,LAB_7101d601cc
+      7101d601c8 ee c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d601cc                                  XREF[2]:     7101d601bc(j), 7101d601c4(j)  
+      7101d601cc 48 29 02 f0     adrp       x8,0x710628b000
+      7101d601d0 08 d9 45 f9     ldr        x8,[x8, #0xbb0]=>->Ring_Decide                   = 71061b80a8
+      7101d601d4 00 01 40 f9     ldr        __this,[x8]=>Ring_Decide                         = 00000000A0004909h
+      7101d601d8 e1 03 1f aa     mov        method,xzr
+      7101d601dc e2 03 1f aa     mov        x2,xzr
+      7101d601e0 7c 4b 14 94     bl         App.GameSound$$PostEvent                         App_GameSound_Handle_o * App.Gam
+      7101d601e4 33 10 80 52     mov        w19,#0x81
+      7101d601e8 bc 01 00 14     b          LAB_7101d608d8
+                             LAB_7101d601ec                                  XREF[1]:     7101d60000(j)  
+      7101d601ec 4a 65 40 f9     ldr        x10,[x10, #0xc8]
+      7101d601f0 4a 0d 0b 8b     add        x10,x10,x11, LSL #0x3
+      7101d601f4 4a 81 5f f8     ldur       x10,[x10, #-0x8]
+      7101d601f8 5f 01 09 eb     cmp        x10,x9
+      7101d601fc 00 01 9f 9a     csel       __this,x8,xzr,eq
+                             LAB_7101d60200                                  XREF[1]:     7101d60008(j)  
+      7101d60200 e1 03 1f 2a     mov        method,wzr
+      7101d60204 e2 03 1f aa     mov        x2,xzr
+      7101d60208 8e f9 1b 94     bl         App.BasicMenu$$RebuildInstant                    void App.BasicMenu$$RebuildInsta
+      7101d6020c 28 29 02 d0     adrp       x8,0x7106286000
+      7101d60210 08 ed 41 f9     ldr        x8,[x8, #0x3d8]=>->App.GameSound_TypeInfo        = 7106157a10
+      7101d60214 00 01 40 f9     ldr        __this,[x8]=>App.GameSound_TypeInfo              = 000000002000C091h
+      7101d60218 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000c1c4
+      7101d6021c 88 00 08 36     tbz        w8,#0x1,LAB_7101d6022c
+      7101d60220 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000c171
+      7101d60224 48 00 00 35     cbnz       w8,LAB_7101d6022c
+      7101d60228 d6 c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d6022c                                  XREF[2]:     7101d6021c(j), 7101d60224(j)  
+      7101d6022c 48 29 02 f0     adrp       x8,0x710628b000
+      7101d60230 08 f1 45 f9     ldr        x8,[x8, #0xbe0]=>->EquipRing_Off                 = 71061accc0
+      7101d60234 00 01 40 f9     ldr        __this,[x8]=>EquipRing_Off                       = 00000000A0001C0Bh
+      7101d60238 e1 03 1f aa     mov        method,xzr
+      7101d6023c e2 03 1f aa     mov        x2,xzr
+      7101d60240 64 4b 14 94     bl         App.GameSound$$PostEvent                         App_GameSound_Handle_o * App.Gam
+      7101d60244 48 29 02 d0     adrp       x8,0x710628a000
+      7101d60248 08 a1 44 f9     ldr        x8,[x8, #0x940]=>->App.UnitInfo_TypeInfo         = 710615c0b8
+      7101d6024c 00 01 40 f9     ldr        __this=>DAT_2000fa17,[x8]=>App.UnitInfo_TypeInfo = 2000fa17
+      7101d60250 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000fb4a
+      7101d60254 88 00 08 36     tbz        w8,#0x1,LAB_7101d60264
+      7101d60258 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000faf7
+      7101d6025c 48 00 00 35     cbnz       w8,LAB_7101d60264
+      7101d60260 c8 c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d60264                                  XREF[2]:     7101d60254(j), 7101d6025c(j)  
+      7101d60264 a8 99 99 52     mov        w8,#0xcccd
+      7101d60268 88 d9 a7 72     movk       w8,#0x3ecc, LSL #16
+      7101d6026c 08 01 27 1e     fmov       s8,w8
+      7101d60270 00 1d a8 4e     mov        v0.16B,v8.16B
+      7101d60274 e0 03 1f 2a     mov        __this,wzr
+      7101d60278 e1 03 1f aa     mov        method,xzr
+      7101d6027c f9 9e 08 94     bl         App.UnitInfo$$SetRelaxAnime                      void App.UnitInfo$$SetRelaxAnime
+      7101d60280 00 1d a8 4e     mov        v0.16B,v8.16B
+      7101d60284 20 00 80 52     mov        __this,#0x1
+      7101d60288 e1 03 1f aa     mov        method,xzr
+      7101d6028c 33 00 80 52     mov        w19,#0x1
+      7101d60290 f4 9e 08 94     bl         App.UnitInfo$$SetRelaxAnime                      void App.UnitInfo$$SetRelaxAnime
+      7101d60294 91 01 00 14     b          LAB_7101d608d8
+                             LAB_7101d60298                                  XREF[1]:     7101d5ff8c(j)  
+      7101d60298 ba c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d6029c c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d602a0 08 64 42 79     ldrh       w8,[__this->klass, #0x132]=>DAT_2000e981
+      7101d602a4 08 01 17 12     and        w8,w8,#0x200
+                             LAB_7101d602a8                                  XREF[2]:     7101d5ff84(j), 7101d5ff94(j)  
+      7101d602a8 09 5c 40 f9     ldr        x9,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d602ac 2a 01 40 f9     ldr        x10,[x9]
+      7101d602b0 29 09 40 f9     ldr        x9,[x9, #0x10]
+      7101d602b4 4a 71 40 f9     ldr        x10,[x10, #0xe0]
+      7101d602b8 5f 01 09 eb     cmp        x10,x9
+      7101d602bc 80 0f 00 54     b.eq       LAB_7101d604ac
+      7101d602c0 e8 00 00 34     cbz        w8,LAB_7101d602dc
+      7101d602c4 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d602c8 a8 00 00 35     cbnz       w8,LAB_7101d602dc
+      7101d602cc ad c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d602d0 c8 02 40 f9     ldr        x8,[x22]=>App.RingSelectConfirmDialog_TypeInfo   = 000000002000E84Fh
+      7101d602d4 08 5d 40 f9     ldr        x8,[x8, #0xb8]=>DAT_2000e907
+      7101d602d8 09 09 40 f9     ldr        x9,[x8, #0x10]
+                             LAB_7101d602dc                                  XREF[2]:     7101d602c0(j), 7101d602c8(j)  
+      7101d602dc 33 15 40 f9     ldr        x19,[x9, #0x28]
+      7101d602e0 1f 20 03 d5     nop
+      7101d602e4 c8 02 40 f9     ldr        x8,[x22]=>App.RingSelectConfirmDialog_TypeInfo   = 000000002000E84Fh
+      7101d602e8 e2 03 1f aa     mov        x2,xzr
+      7101d602ec 08 5d 40 f9     ldr        x8,[x8, #0xb8]=>DAT_2000e907
+      7101d602f0 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d602f4 01 01 40 f9     ldr        method,[x8]
+      7101d602f8 1a f5 fb 97     bl         App.UnitRingPool$$SetOwner                       void App.UnitRingPool$$SetOwner(
+      7101d602fc 28 29 02 d0     adrp       x8,0x7106286000
+      7101d60300 08 ed 41 f9     ldr        x8,[x8, #0x3d8]=>->App.GameSound_TypeInfo        = 7106157a10
+      7101d60304 00 01 40 f9     ldr        __this,[x8]=>App.GameSound_TypeInfo              = 000000002000C091h
+      7101d60308 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000c1c4
+      7101d6030c 88 00 08 36     tbz        w8,#0x1,LAB_7101d6031c
+      7101d60310 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000c171
+      7101d60314 48 00 00 35     cbnz       w8,LAB_7101d6031c
+      7101d60318 9a c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d6031c                                  XREF[2]:     7101d6030c(j), 7101d60314(j)  
+      7101d6031c a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60320 08 21 44 f9     ldr        x8,[x8, #0x840]=>->EquipRing_On                  = 71061accc8
+      7101d60324 00 01 40 f9     ldr        __this,[x8]=>EquipRing_On                        = 00000000A0001C0Dh
+      7101d60328 e1 03 1f aa     mov        method,xzr
+      7101d6032c e2 03 1f aa     mov        x2,xzr
+      7101d60330 28 4b 14 94     bl         App.GameSound$$PostEvent                         App_GameSound_Handle_o * App.Gam
+      7101d60334 b4 29 02 b0     adrp       x20,0x7106295000
+      7101d60338 94 f2 43 f9     ldr        x20,[x20, #0x7e0]=>->System.Collections.Generi   = 7106150760
+      7101d6033c 80 02 40 f9     ldr        __this,[x20]=>System.Collections.Generic.Dicti   = 00000000200036DDh
+      7101d60340 ac c7 9c 97     bl         il2cpp_object_new                                Il2CppObject * il2cpp_object_new
+      7101d60344 b6 29 02 b0     adrp       x22,0x7106295000
+      7101d60348 d6 ea 43 f9     ldr        x22,[x22, #0x7d0]=>->Method$System.Collections   = 710616a610
+      7101d6034c c1 02 40 f9     ldr        method,[x22]=>Method$System.Collections.Generi   = 00000000C0007CE5h
+      7101d60350 f5 03 00 aa     mov        x21,__this
+      7101d60354 97 9e 7d 94     bl         System.Collections.Generic.Dictionary<>$$.ctor   undefined System.Collections.Gen
+      7101d60358 80 02 40 f9     ldr        __this,[x20]=>System.Collections.Generic.Dicti   = 00000000200036DDh
+      7101d6035c a5 c7 9c 97     bl         il2cpp_object_new                                Il2CppObject * il2cpp_object_new
+      7101d60360 c1 02 40 f9     ldr        method,[x22]=>Method$System.Collections.Generi   = 00000000C0007CE5h
+      7101d60364 f4 03 00 aa     mov        x20,__this
+      7101d60368 92 9e 7d 94     bl         System.Collections.Generic.Dictionary<>$$.ctor   undefined System.Collections.Gen
+      7101d6036c 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d60370 b8 83 1f f8     stur       x24,[x29, #local_68]
+      7101d60374 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d60378 a8 00 08 36     tbz        w8,#0x1,LAB_7101d6038c
+      7101d6037c 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d60380 68 00 00 35     cbnz       w8,LAB_7101d6038c
+      7101d60384 7f c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d60388 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d6038c                                  XREF[2]:     7101d60378(j), 7101d60380(j)  
+      7101d6038c 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d60390 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d60394 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60398 08 e1 43 f9     ldr        x8,[x8, #0x7c0]=>->Method$System.Collections.G   = 710616a630
+      7101d6039c 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C0007CEDh
+      7101d603a0 e8 03 00 91     mov        x8,sp
+      7101d603a4 93 a2 7d 94     bl         System.Collections.Generic.Dictionary<>$$GetEn   System_Collections_Generic_Dicti
+      7101d603a8 e8 27 41 a9     ldp        x8,x9,[sp, #local_c0]
+      7101d603ac bb 29 02 b0     adrp       x27,0x7106295000
+      7101d603b0 ea 13 40 f9     ldr        x10,[sp, #local_b0]
+      7101d603b4 e9 2b 05 a9     stp        x9,x10,[sp, #local_80]
+      7101d603b8 ec 2f 40 a9     ldp        x12,x11,[sp]=>local_d0
+      7101d603bc ec 1f 00 f9     str        x12,[sp, #local_98]
+      7101d603c0 eb 23 04 a9     stp        x11,x8,[sp, #local_90]
+      7101d603c4 bc 29 02 b0     adrp       x28,0x7106295000
+      7101d603c8 38 00 80 52     mov        w24,#0x1
+      7101d603cc 7b fb 43 f9     ldr        x27,[x27, #0x7f0]=>->Method$System.Collections   = 710616f708
+      7101d603d0 9c d7 43 f9     ldr        x28,[x28, #0x7a8]=>->Method$System.Collections   = 710616a618
+                             LAB_7101d603d4                                  XREF[4]:     7101d60400(j), 7101d6042c(j), 
+                                                                                          7101d60440(j), 7101d6045c(j)  
+      7101d603d4 61 03 40 f9     ldr        method,[x27]=>Method$System.Collections.Generi   = 00000000C000C239h
+      7101d603d8 e0 e3 00 91     add        __this,sp,#0x38
+      7101d603dc c9 3d 5c 94     bl         System.Collections.Generic.Dictionary.Enumerat   undefined System.Collections.Gen
+      7101d603e0 00 04 00 36     tbz        __this,#0x0,LAB_7101d60460
+      7101d603e4 f6 df 44 a9     ldp        x22,x23,[sp, #local_88]
+      7101d603e8 42 03 40 f9     ldr        x2=>DAT_c0007ceb,[x26]=>Method$System.Collecti   = 00000000C0007CEBh
+      7101d603ec 38 02 00 36     tbz        w24,#0x0,LAB_7101d60430
+      7101d603f0 e0 03 15 aa     mov        __this,x21
+      7101d603f4 e1 03 16 aa     mov        method,x22
+      7101d603f8 a6 a1 7d 94     bl         System.Collections.Generic.Dictionary<>$$Conta   undefined System.Collections.Gen
+      7101d603fc 38 00 80 52     mov        w24,#0x1
+      7101d60400 a0 fe 07 37     tbnz       __this,#0x0,LAB_7101d603d4
+      7101d60404 83 03 40 f9     ldr        x3,[x28]=>Method$System.Collections.Generic.Di   = 00000000C0007CE7h
+      7101d60408 e0 03 15 aa     mov        __this,x21
+      7101d6040c e1 03 16 aa     mov        method,x22
+      7101d60410 e2 03 17 aa     mov        x2,x23
+      7101d60414 07 a1 7d 94     bl         System.Collections.Generic.Dictionary<>$$Add     undefined System.Collections.Gen
+      7101d60418 7f 02 00 f1     cmp        x19,#0x0
+      7101d6041c e8 17 9f 1a     cset       w8,eq
+      7101d60420 df 02 13 eb     cmp        x22,x19
+      7101d60424 e9 07 9f 1a     cset       w9,ne
+      7101d60428 18 01 09 2a     orr        w24,w8,w9
+      7101d6042c ea ff ff 17     b          LAB_7101d603d4
+                             LAB_7101d60430                                  XREF[1]:     7101d603ec(j)  
+      7101d60430 e0 03 14 aa     mov        __this,x20
+      7101d60434 e1 03 16 aa     mov        method,x22
+      7101d60438 96 a1 7d 94     bl         System.Collections.Generic.Dictionary<>$$Conta   undefined System.Collections.Gen
+      7101d6043c f8 03 1f 2a     mov        w24,wzr
+      7101d60440 a0 fc 07 37     tbnz       __this,#0x0,LAB_7101d603d4
+      7101d60444 83 03 40 f9     ldr        x3,[x28]=>Method$System.Collections.Generic.Di   = 00000000C0007CE7h
+      7101d60448 e0 03 14 aa     mov        __this,x20
+      7101d6044c e1 03 16 aa     mov        method,x22
+      7101d60450 e2 03 17 aa     mov        x2,x23
+      7101d60454 f7 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Add     undefined System.Collections.Gen
+      7101d60458 f8 03 1f 2a     mov        w24,wzr
+      7101d6045c de ff ff 17     b          LAB_7101d603d4
+                             LAB_7101d60460                                  XREF[1]:     7101d603e0(j)  
+      7101d60460 e8 53 80 52     mov        w8,#0x29f
+      7101d60464 29 00 80 52     mov        w9,#0x1
+      7101d60468 e8 2b 00 b9     str        w8,[sp, #local_a8]
+      7101d6046c e9 37 00 b9     str        w9,[sp, #local_9c]
+      7101d60470 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60474 08 f5 43 f9     ldr        x8,[x8, #0x7e8]=>->Method$System.Collections.G   = 710616f700
+      7101d60478 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C000C237h
+      7101d6047c e0 e3 00 91     add        __this,sp,#0x38
+      7101d60480 fc 3d 5c 94     bl         System.Collections.Generic.Dictionary.Enumerat   undefined System.Collections.Gen
+      7101d60484 ff 37 00 b9     str        wzr,[sp, #local_9c]
+      7101d60488 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d6048c b3 29 02 b0     adrp       x19,0x7106295000
+      7101d60490 b8 83 5f f8     ldur       x24,[x29, #local_68]
+      7101d60494 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d60498 73 e2 43 f9     ldr        x19,[x19, #0x7c0]=>->Method$System.Collections   = 710616a630
+      7101d6049c 08 03 08 37     tbnz       w8,#0x1,LAB_7101d604fc
+      7101d604a0 b6 29 02 b0     adrp       x22,0x7106295000
+      7101d604a4 d6 d2 43 f9     ldr        x22,[x22, #0x7a0]=>->App.RingSelectConfirmDial   = 710615ab90
+      7101d604a8 1b 00 00 14     b          LAB_7101d60514
+                             LAB_7101d604ac                                  XREF[1]:     7101d602bc(j)  
+      7101d604ac 88 00 00 34     cbz        w8,LAB_7101d604bc
+      7101d604b0 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d604b4 48 00 00 35     cbnz       w8,LAB_7101d604bc
+      7101d604b8 32 c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d604bc                                  XREF[2]:     7101d604ac(j), 7101d604b4(j)  
+      7101d604bc 55 01 00 94     bl         App.RingSelectConfirmDialog.ConfirmYesDialogIt   void App.RingSelectConfirmDialog
+      7101d604c0 28 29 02 d0     adrp       x8,0x7106286000
+      7101d604c4 08 ed 41 f9     ldr        x8,[x8, #0x3d8]=>->App.GameSound_TypeInfo        = 7106157a10
+      7101d604c8 00 01 40 f9     ldr        __this,[x8]=>App.GameSound_TypeInfo              = 000000002000C091h
+      7101d604cc 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000c1c4
+      7101d604d0 88 00 08 36     tbz        w8,#0x1,LAB_7101d604e0
+      7101d604d4 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000c171
+      7101d604d8 48 00 00 35     cbnz       w8,LAB_7101d604e0
+      7101d604dc 29 c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+                             LAB_7101d604e0                                  XREF[2]:     7101d604d0(j), 7101d604d8(j)  
+      7101d604e0 48 29 02 f0     adrp       x8,0x710628b000
+      7101d604e4 08 f1 45 f9     ldr        x8,[x8, #0xbe0]=>->EquipRing_Off                 = 71061accc0
+      7101d604e8 00 01 40 f9     ldr        __this,[x8]=>EquipRing_Off                       = 00000000A0001C0Bh
+      7101d604ec e1 03 1f aa     mov        method,xzr
+      7101d604f0 e2 03 1f aa     mov        x2,xzr
+      7101d604f4 b7 4a 14 94     bl         App.GameSound$$PostEvent                         App_GameSound_Handle_o * App.Gam
+      7101d604f8 d6 00 00 14     b          LAB_7101d60850
+                             LAB_7101d604fc                                  XREF[1]:     7101d6049c(j)  
+      7101d604fc b6 29 02 b0     adrp       x22,0x7106295000
+      7101d60500 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d60504 d6 d2 43 f9     ldr        x22,[x22, #0x7a0]=>->App.RingSelectConfirmDial   = 710615ab90
+      7101d60508 68 00 00 35     cbnz       w8,LAB_7101d60514
+      7101d6050c 1d c7 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d60510 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d60514                                  XREF[2]:     7101d604a8(j), 7101d60508(j)  
+      7101d60514 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d60518 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d6051c a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60520 08 d9 43 f9     ldr        x8,[x8, #0x7b0]=>->Method$System.Collections.G   = 710616a620
+      7101d60524 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C0007CE9h
+      7101d60528 32 a1 7d 94     bl         System.Collections.Generic.Dictionary<>$$Clear   undefined System.Collections.Gen
+      7101d6052c a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60530 08 ed 43 f9     ldr        x8,[x8, #0x7d8]=>->Method$System.Collections.G   = 710616a640
+      7101d60534 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C0007CF1h
+      7101d60538 e0 03 15 aa     mov        __this,x21
+      7101d6053c ed 9f 7d 94     bl         System.Collections.Generic.Dictionary<>$$get_C   int System.Collections.Generic.D
+      7101d60540 1f 04 00 71     cmp        __this,#0x1
+      7101d60544 2b 09 00 54     b.lt       LAB_7101d60668
+      7101d60548 61 02 40 f9     ldr        method,[x19]=>Method$System.Collections.Generi   = 00000000C0007CEDh
+      7101d6054c e8 03 00 91     mov        x8,sp
+      7101d60550 e0 03 15 aa     mov        __this,x21
+      7101d60554 27 a2 7d 94     bl         System.Collections.Generic.Dictionary<>$$GetEn   System_Collections_Generic_Dicti
+      7101d60558 e8 27 41 a9     ldp        x8,x9,[sp, #local_c0]
+      7101d6055c eb 2b 40 a9     ldp        x11,x10,[sp]=>local_d0
+      7101d60560 eb 1f 00 f9     str        x11,[sp, #local_98]
+      7101d60564 ea 23 04 a9     stp        x10,x8,[sp, #local_90]
+      7101d60568 e8 13 40 f9     ldr        x8,[sp, #local_b0]
+      7101d6056c e9 23 05 a9     stp        x9,x8,[sp, #local_80]
+      7101d60570 08 00 00 14     b          LAB_7101d60590
+                             LAB_7101d60574                                  XREF[1]:     7101d605f0(j)  
+      7101d60574 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d60578                                  XREF[2]:     7101d605e0(j), 7101d605e8(j)  
+      7101d60578 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d6057c 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d60580 83 03 40 f9     ldr        x3,[x28]=>Method$System.Collections.Generic.Di   = 00000000C0007CE7h
+      7101d60584 e1 03 16 aa     mov        method,x22
+      7101d60588 e2 03 17 aa     mov        x2,x23
+      7101d6058c a9 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Add     undefined System.Collections.Gen
+                             LAB_7101d60590                                  XREF[2]:     7101d60570(j), 7101d605d4(j)  
+      7101d60590 61 03 40 f9     ldr        method,[x27]=>Method$System.Collections.Generi   = 00000000C000C239h
+      7101d60594 e0 e3 00 91     add        __this,sp,#0x38
+      7101d60598 5a 3d 5c 94     bl         System.Collections.Generic.Dictionary.Enumerat   undefined System.Collections.Gen
+      7101d6059c c0 02 00 36     tbz        __this,#0x0,LAB_7101d605f4
+      7101d605a0 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d605a4 f6 df 44 a9     ldp        x22,x23,[sp, #local_88]
+      7101d605a8 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d605ac a8 00 08 36     tbz        w8,#0x1,LAB_7101d605c0
+      7101d605b0 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d605b4 68 00 00 35     cbnz       w8,LAB_7101d605c0
+      7101d605b8 f2 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d605bc 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d605c0                                  XREF[2]:     7101d605ac(j), 7101d605b4(j)  
+      7101d605c0 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d605c4 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d605c8 42 03 40 f9     ldr        x2=>DAT_c0007ceb,[x26]=>Method$System.Collecti   = 00000000C0007CEBh
+      7101d605cc e1 03 16 aa     mov        method,x22
+      7101d605d0 30 a1 7d 94     bl         System.Collections.Generic.Dictionary<>$$Conta   undefined System.Collections.Gen
+      7101d605d4 e0 fd 07 37     tbnz       __this,#0x0,LAB_7101d60590
+      7101d605d8 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d605dc 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d605e0 c8 fc 0f 36     tbz        w8,#0x1,LAB_7101d60578
+      7101d605e4 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d605e8 88 fc ff 35     cbnz       w8,LAB_7101d60578
+      7101d605ec e5 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d605f0 e1 ff ff 17     b          LAB_7101d60574
+                             LAB_7101d605f4                                  XREF[1]:     7101d6059c(j)  
+      7101d605f4 28 61 80 52     mov        w8,#0x309
+      7101d605f8 e8 2b 00 b9     str        w8,[sp, #local_a8]
+      7101d605fc e8 37 40 b9     ldr        w8,[sp, #local_9c]
+      7101d60600 17 05 00 11     add        w23,w8,#0x1
+      7101d60604 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60608 f7 37 00 b9     str        w23,[sp, #local_9c]
+      7101d6060c 08 f5 43 f9     ldr        x8,[x8, #0x7e8]=>->Method$System.Collections.G   = 710616f700
+      7101d60610 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C000C237h
+      7101d60614 e0 e3 00 91     add        __this,sp,#0x38
+      7101d60618 96 3d 5c 94     bl         System.Collections.Generic.Dictionary.Enumerat   undefined System.Collections.Gen
+      7101d6061c b6 29 02 b0     adrp       x22,0x7106295000
+      7101d60620 d6 d2 43 f9     ldr        x22,[x22, #0x7a0]=>->App.RingSelectConfirmDial   = 710615ab90
+      7101d60624 17 01 00 34     cbz        w23,LAB_7101d60644
+      7101d60628 e8 06 00 51     sub        w8,w23,#0x1
+      7101d6062c e9 a3 00 91     add        x9,sp,#0x28
+      7101d60630 29 d9 68 b8     ldr        w9,[x9, w8, SXTW #0x2]
+      7101d60634 3f 25 0c 71     cmp        w9,#0x309
+      7101d60638 61 00 00 54     b.ne       LAB_7101d60644
+      7101d6063c f7 03 08 2a     mov        w23,w8
+      7101d60640 e8 37 00 b9     str        w8,[sp, #local_9c]
+                             LAB_7101d60644                                  XREF[2]:     7101d60624(j), 7101d60638(j)  
+      7101d60644 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60648 08 d9 43 f9     ldr        x8,[x8, #0x7b0]=>->Method$System.Collections.G   = 710616a620
+      7101d6064c 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C0007CE9h
+      7101d60650 e0 03 15 aa     mov        __this,x21
+      7101d60654 e7 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Clear   undefined System.Collections.Gen
+      7101d60658 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d6065c 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d60660 c8 00 08 37     tbnz       w8,#0x1,LAB_7101d60678
+      7101d60664 09 00 00 14     b          LAB_7101d60688
+                             LAB_7101d60668                                  XREF[1]:     7101d60544(j)  
+      7101d60668 f7 03 1f 2a     mov        w23,wzr
+      7101d6066c 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d60670 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d60674 a8 00 08 36     tbz        w8,#0x1,LAB_7101d60688
+                             LAB_7101d60678                                  XREF[1]:     7101d60660(j)  
+      7101d60678 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d6067c 68 00 00 35     cbnz       w8,LAB_7101d60688
+      7101d60680 c0 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d60684 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d60688                                  XREF[3]:     7101d60664(j), 7101d60674(j), 
+                                                                                          7101d6067c(j)  
+      7101d60688 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d6068c c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d60690 15 09 40 f9     ldr        x21,[x8, #0x10]
+      7101d60694 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d60698 a8 00 08 36     tbz        w8,#0x1,LAB_7101d606ac
+      7101d6069c 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d606a0 68 00 00 35     cbnz       w8,LAB_7101d606ac
+      7101d606a4 b7 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d606a8 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d606ac                                  XREF[2]:     7101d60698(j), 7101d606a0(j)  
+      7101d606ac 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d606b0 e0 03 15 aa     mov        __this,x21
+      7101d606b4 01 01 40 f9     ldr        method,[x8]
+      7101d606b8 42 03 40 f9     ldr        x2=>DAT_c0007ceb,[x26]=>Method$System.Collecti   = 00000000C0007CEBh
+      7101d606bc f5 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Conta   undefined System.Collections.Gen
+      7101d606c0 20 03 00 37     tbnz       __this,#0x0,LAB_7101d60724
+      7101d606c4 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d606c8 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d606cc a8 00 08 36     tbz        w8,#0x1,LAB_7101d606e0
+      7101d606d0 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d606d4 68 00 00 35     cbnz       w8,LAB_7101d606e0
+      7101d606d8 aa c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d606dc 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d606e0                                  XREF[2]:     7101d606cc(j), 7101d606d4(j)  
+      7101d606e0 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d606e4 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d606e8 15 09 40 f9     ldr        x21,[x8, #0x10]
+      7101d606ec 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d606f0 a8 00 08 36     tbz        w8,#0x1,LAB_7101d60704
+      7101d606f4 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d606f8 68 00 00 35     cbnz       w8,LAB_7101d60704
+      7101d606fc a1 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d60700 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d60704                                  XREF[2]:     7101d606f0(j), 7101d606f8(j)  
+      7101d60704 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d60708 e0 03 15 aa     mov        __this,x21
+      7101d6070c 01 01 40 f9     ldr        method,[x8]
+      7101d60710 08 09 40 f9     ldr        x8,[x8, #0x10]
+      7101d60714 08 11 40 f9     ldr        x8,[x8, #0x20]
+      7101d60718 02 11 40 f9     ldr        x2,[x8, #0x20]
+      7101d6071c 83 03 40 f9     ldr        x3,[x28]=>Method$System.Collections.Generic.Di   = 00000000C0007CE7h
+      7101d60720 44 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Add     undefined System.Collections.Gen
+                             LAB_7101d60724                                  XREF[1]:     7101d606c0(j)  
+      7101d60724 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60728 08 ed 43 f9     ldr        x8,[x8, #0x7d8]=>->Method$System.Collections.G   = 710616a640
+      7101d6072c 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C0007CF1h
+      7101d60730 e0 03 14 aa     mov        __this,x20
+      7101d60734 6f 9f 7d 94     bl         System.Collections.Generic.Dictionary<>$$get_C   int System.Collections.Generic.D
+      7101d60738 1f 04 00 71     cmp        __this,#0x1
+      7101d6073c ab 08 00 54     b.lt       LAB_7101d60850
+      7101d60740 61 02 40 f9     ldr        method,[x19]=>Method$System.Collections.Generi   = 00000000C0007CEDh
+      7101d60744 e8 03 00 91     mov        x8,sp
+      7101d60748 e0 03 14 aa     mov        __this,x20
+      7101d6074c a9 a1 7d 94     bl         System.Collections.Generic.Dictionary<>$$GetEn   System_Collections_Generic_Dicti
+      7101d60750 e8 27 41 a9     ldp        x8,x9,[sp, #local_c0]
+      7101d60754 eb 2b 40 a9     ldp        x11,x10,[sp]=>local_d0
+      7101d60758 eb 1f 00 f9     str        x11,[sp, #local_98]
+      7101d6075c ea 23 04 a9     stp        x10,x8,[sp, #local_90]
+      7101d60760 e8 13 40 f9     ldr        x8,[sp, #local_b0]
+      7101d60764 e9 23 05 a9     stp        x9,x8,[sp, #local_80]
+      7101d60768 08 00 00 14     b          LAB_7101d60788
+                             LAB_7101d6076c                                  XREF[1]:     7101d607e8(j)  
+      7101d6076c 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d60770                                  XREF[2]:     7101d607d8(j), 7101d607e0(j)  
+      7101d60770 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d60774 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d60778 83 03 40 f9     ldr        x3,[x28]=>Method$System.Collections.Generic.Di   = 00000000C0007CE7h
+      7101d6077c e1 03 15 aa     mov        method,x21
+      7101d60780 e2 03 16 aa     mov        x2,x22
+      7101d60784 2b a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Add     undefined System.Collections.Gen
+                             LAB_7101d60788                                  XREF[2]:     7101d60768(j), 7101d607cc(j)  
+      7101d60788 61 03 40 f9     ldr        method,[x27]=>Method$System.Collections.Generi   = 00000000C000C239h
+      7101d6078c e0 e3 00 91     add        __this,sp,#0x38
+      7101d60790 dc 3c 5c 94     bl         System.Collections.Generic.Dictionary.Enumerat   undefined System.Collections.Gen
+      7101d60794 c0 02 00 36     tbz        __this,#0x0,LAB_7101d607ec
+      7101d60798 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d6079c f5 db 44 a9     ldp        x21,x22,[sp, #local_88]
+      7101d607a0 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d607a4 a8 00 08 36     tbz        w8,#0x1,LAB_7101d607b8
+      7101d607a8 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d607ac 68 00 00 35     cbnz       w8,LAB_7101d607b8
+      7101d607b0 74 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d607b4 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+                             LAB_7101d607b8                                  XREF[2]:     7101d607a4(j), 7101d607ac(j)  
+      7101d607b8 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e909
+      7101d607bc 00 09 40 f9     ldr        __this,[x8, #0x10]
+      7101d607c0 42 03 40 f9     ldr        x2=>DAT_c0007ceb,[x26]=>Method$System.Collecti   = 00000000C0007CEBh
+      7101d607c4 e1 03 15 aa     mov        method,x21
+      7101d607c8 b2 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Conta   undefined System.Collections.Gen
+      7101d607cc e0 fd 07 37     tbnz       __this,#0x0,LAB_7101d60788
+      7101d607d0 20 03 40 f9     ldr        __this,[x25]=>App.RingSelectMenu_TypeInfo        = 000000002000E851h
+      7101d607d4 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e984
+      7101d607d8 c8 fc 0f 36     tbz        w8,#0x1,LAB_7101d60770
+      7101d607dc 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e931
+      7101d607e0 88 fc ff 35     cbnz       w8,LAB_7101d60770
+      7101d607e4 67 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d607e8 e1 ff ff 17     b          LAB_7101d6076c
+                             LAB_7101d607ec                                  XREF[1]:     7101d60794(j)  
+      7101d607ec e8 a3 00 91     add        x8,sp,#0x28
+      7101d607f0 09 74 80 52     mov        w9,#0x3a0
+      7101d607f4 e0 e3 00 91     add        __this,sp,#0x38
+      7101d607f8 09 d9 37 b8     str        w9,[x8, w23, SXTW #0x2]
+      7101d607fc e8 37 40 b9     ldr        w8,[sp, #local_9c]
+      7101d60800 17 05 00 11     add        w23,w8,#0x1
+      7101d60804 a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60808 f7 37 00 b9     str        w23,[sp, #local_9c]
+      7101d6080c 08 f5 43 f9     ldr        x8,[x8, #0x7e8]=>->Method$System.Collections.G   = 710616f700
+      7101d60810 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C000C237h
+      7101d60814 17 3d 5c 94     bl         System.Collections.Generic.Dictionary.Enumerat   undefined System.Collections.Gen
+      7101d60818 b6 29 02 b0     adrp       x22,0x7106295000
+      7101d6081c d6 d2 43 f9     ldr        x22,[x22, #0x7a0]=>->App.RingSelectConfirmDial   = 710615ab90
+      7101d60820 f7 00 00 34     cbz        w23,LAB_7101d6083c
+      7101d60824 e8 06 00 51     sub        w8,w23,#0x1
+      7101d60828 e9 a3 00 91     add        x9,sp,#0x28
+      7101d6082c 29 d9 68 b8     ldr        w9,[x9, w8, SXTW #0x2]
+      7101d60830 3f 81 0e 71     cmp        w9,#0x3a0
+      7101d60834 41 00 00 54     b.ne       LAB_7101d6083c
+      7101d60838 e8 37 00 b9     str        w8,[sp, #local_9c]
+                             LAB_7101d6083c                                  XREF[2]:     7101d60820(j), 7101d60834(j)  
+      7101d6083c a8 29 02 b0     adrp       x8,0x7106295000
+      7101d60840 08 d9 43 f9     ldr        x8,[x8, #0x7b0]=>->Method$System.Collections.G   = 710616a620
+      7101d60844 01 01 40 f9     ldr        method,[x8]=>Method$System.Collections.Generic   = 00000000C0007CE9h
+      7101d60848 e0 03 14 aa     mov        __this,x20
+      7101d6084c 69 a0 7d 94     bl         System.Collections.Generic.Dictionary<>$$Clear   undefined System.Collections.Gen
+                             LAB_7101d60850                                  XREF[2]:     7101d604f8(j), 7101d6073c(j)  
+      7101d60850 08 0b 40 f9     ldr        x8,[x24, #0x10]
+      7101d60854 08 19 40 f9     ldr        x8,[x8, #0x30]
+      7101d60858 e8 00 00 b4     cbz        x8,LAB_7101d60874
+      7101d6085c 29 03 40 f9     ldr        x9,[x25]=>App.RingSelectMenu_TypeInfo            = 000000002000E851h
+      7101d60860 0a 01 40 f9     ldr        x10,[x8]
+      7101d60864 4c b1 44 39     ldrb       w12,[x10, #0x12c]
+      7101d60868 2b b1 44 39     ldrb       w11,[x9, #0x12c]=>DAT_2000e97d
+      7101d6086c 9f 01 0b 6b     cmp        w12,w11
+      7101d60870 62 00 00 54     b.cs       LAB_7101d6087c
+                             LAB_7101d60874                                  XREF[1]:     7101d60858(j)  
+      7101d60874 f3 03 1f aa     mov        x19,xzr
+      7101d60878 06 00 00 14     b          LAB_7101d60890
+                             LAB_7101d6087c                                  XREF[1]:     7101d60870(j)  
+      7101d6087c 4a 65 40 f9     ldr        x10,[x10, #0xc8]
+      7101d60880 4a 0d 0b 8b     add        x10,x10,x11, LSL #0x3
+      7101d60884 4a 81 5f f8     ldur       x10,[x10, #-0x8]
+      7101d60888 5f 01 09 eb     cmp        x10,x9
+      7101d6088c 13 01 9f 9a     csel       x19,x8,xzr,eq
+                             LAB_7101d60890                                  XREF[1]:     7101d60878(j)  
+      7101d60890 e0 03 13 aa     mov        __this,x19
+      7101d60894 e1 03 1f aa     mov        method,xzr
+      7101d60898 7e 66 05 94     bl         App.RingSelectMenu$$SaveSelect                   void App.RingSelectMenu$$SaveSel
+      7101d6089c c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d608a0 74 be 40 b9     ldr        w20,[x19, #DAT_000000bc]
+      7101d608a4 08 cc 44 39     ldrb       w8,[__this->klass, #0x133]=>DAT_2000e982
+      7101d608a8 a8 00 08 36     tbz        w8,#0x1,LAB_7101d608bc
+      7101d608ac 08 e0 40 b9     ldr        w8,[__this->klass, #0xe0]=>DAT_2000e92f
+      7101d608b0 68 00 00 35     cbnz       w8,LAB_7101d608bc
+      7101d608b4 33 c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d608b8 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+                             LAB_7101d608bc                                  XREF[2]:     7101d608a8(j), 7101d608b0(j)  
+      7101d608bc 08 5c 40 f9     ldr        x8,[__this->klass, #0xb8]=>DAT_2000e907
+      7101d608c0 e0 03 13 aa     mov        __this,x19
+      7101d608c4 e1 03 14 2a     mov        method,w20
+      7101d608c8 02 01 40 f9     ldr        x2,[x8]
+      7101d608cc e3 03 1f aa     mov        x3,xzr
+      7101d608d0 00 64 05 94     bl         App.RingSelectMenu$$RebuildMenu                  void App.RingSelectMenu$$Rebuild
+      7101d608d4 33 00 80 52     mov        w19,#0x1
+                             LAB_7101d608d8                                  XREF[2]:     7101d601e8(j), 7101d60294(j)  
+      7101d608d8 e8 33 40 fd     ldr        d8,[sp, #local_70]
+      7101d608dc e0 03 13 2a     mov        __this,w19
+      7101d608e0 f4 4f 4c a9     ldp        x20,x19,[sp, #local_10]
+      7101d608e4 f6 57 4b a9     ldp        x22,x21,[sp, #local_20]
+      7101d608e8 f8 5f 4a a9     ldp        x24,x23,[sp, #local_30]
+      7101d608ec fa 67 49 a9     ldp        x26,x25,[sp, #local_40]
+      7101d608f0 fc 6f 48 a9     ldp        x28,x27,[sp, #local_50]
+      7101d608f4 fd 7b 47 a9     ldp        x29=>local_60,x30,[sp, #0x70]
+      7101d608f8 ff 43 03 91     add        sp,sp,#0xd0
+      7101d608fc c0 03 5f d6     ret
+                             LAB_7101d60900                                  XREF[1]:     7101d5fd50(j)  
+      7101d60900 f9 03 18 aa     mov        x25,x24
+      7101d60904 1f c6 9c 97     bl         thunk_FUN_71004367d8                             void * thunk_FUN_71004367d8(Il2C
+      7101d60908 c0 02 40 f9     ldr        __this,[x22]=>App.RingSelectConfirmDialog_Type   = 000000002000E84Fh
+      7101d6090c 13 fd ff 17     b          LAB_7101d5fd58
