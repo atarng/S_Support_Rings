@@ -247,15 +247,8 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
     if let Some(person) = unit {
     if let Some(unit_ring) = person.get_ring() {
     if let Some(god) = person.get_god_unit() {
-        println!("[infoutil_getskilllistforunitinfo]========================================================");
-        println!("[infoutil_getskilllistforunitinfo] is_equip: {} is_pack: {} size: {}", is_equip, is_pack, size);
-        println!("[infoutil_getskilllistforunitinfo] number_of_ring_skills: {}", ring_skills_to_add);
-        println!("[infoutil_getskilllistforunitinfo] person: {} original_length: {}", person.get_pid(), original.len());
         let ring_data = unit_ring.fields.data;
         let ring_skills = ring_data.get_equip_skills();
-        println!("[infoutil_getskilllistforunitinfo] god: {} ring: {} r_skills: {}",
-                god.fields.data.fields.gid, ring_data.fields.rid, ring_skills_to_add);
-
         let mut inheritance_skills_present = 0;
         let mut ring_skills_present = 0;
 
@@ -266,17 +259,8 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
             for i in 0..original.len() {
                 if let Some(skill_exists) = original[i] {
                     let category = infoutil_statusskill_getcategory(skill_exists, _method_info);
-                    if let Some(original_skill_data) = infoutil_statusskill_getdata(skill_exists, _method_info) {
-                        println!("[infoutil_getskilllistforunitinfo] original_skill_data[{}]: {} c: {}",
-                        i, original_skill_data.fields.sid, category);
-                    } else {
-                        println!("[infoutil_getskilllistforunitinfo] original_skill_data[{}]: c: {}", i, category);
-                    }
-
                     if category == 6 { ring_skills_present += 1; }
                     if category == 11 { inheritance_skills_present += 1; }
-                } else {
-                    println!("[infoutil_getskilllistforunitinfo] no StatusSkill in slot: {}", i);
                 }
             }
 
@@ -291,10 +275,6 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
                     if skill_category == 6 { ring_skills_in_equip_list += 1; }
                 }
             }
-            println!("[infoutil_getskilllistforunitinfo] inheritance_skills_present: {} in_equip_list: {}",
-                    inheritance_skills_present, inheritance_skills_in_equip_list);
-            println!("[infoutil_getskilllistforunitinfo] ring_skills_present: {} in_equip_list: {}",
-                    ring_skills_present, ring_skills_in_equip_list);
 
             let mut jobskill_present : bool = false;
             let mut ring_start_index = 0;
@@ -312,9 +292,7 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
             }
                 
             let slots_needed = (2 - inheritance_skills_present) + (ring_skills_in_equip_list - ring_skills_present);
-            println!("[infoutil_getskilllistforunitinfo] slots_needed: {}", slots_needed);
             // Shift everything over by number of skills that need to be added
-            println!("[infoutil_getskilllistforunitinfo] shift {{{}, {}}} >> {} (eg. [0] -> [1])", original.len(), start, slots_needed);
             for i in (start..original.len()).rev() {
                 let index_to_source = if i < slots_needed { 0 } else { i - slots_needed };
                 original[i] = original[index_to_source as usize];
@@ -324,13 +302,11 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
                 // Fill with empty slots
                 let inheritance_start_index = start + if is_equip { inheritance_skills_present } else { 0 };
                 let inheritance_fin_index   = inheritance_start_index + (2 - inheritance_skills_present);
-                println!("[infoutil_getskilllistforunitinfo] looping: {}->{} ", inheritance_start_index, inheritance_fin_index);
                 for i in inheritance_start_index..inheritance_fin_index {
                     let dupet = Il2CppClass::from_name("App", "InfoUtil").unwrap().get_nested_types().iter().find(|t| t.get_name() == "StatusSkill").unwrap();
                     let newt: &'static StatusSkill = il2cpp::instantiate_class::<StatusSkill>(dupet).unwrap();
                     original[i as usize] = Some(newt);
                     if let Some(original_i_unwrapped) = original[i as usize] {
-                        println!("[infoutil_getskilllistforunitinfo] creating empty inheritance in slot: {}", i);
                         let skill_category  = 11;
                         infoutil_statusskill_setcategory(original_i_unwrapped, skill_category, _method_info); 
                         infoutil_statusskill_setisactive(original_i_unwrapped, false, _method_info);
@@ -352,8 +328,6 @@ pub fn infoutil_getskilllistforunitinfo(unit: Option<&Unit>, is_equip: bool, is_
                     if let Some(original_i_unwrapped) = original[i as usize] {
                         let skill_array_entity = &ring_skills[ring_skills_index];
                         if let Some(r_skill) = skill_array_entity.get_skill() {
-                            println!("[infoutil_getskilllistforunitinfo] creating ring_skill[{}] in slot: {}",
-                                    ring_skills_index, i);
                             infoutil_statusskill_setcategory(original_i_unwrapped, skill_category, _method_info); 
                             infoutiil_statusskill_setdata(original_i_unwrapped, Some(r_skill), _method_info);
                             infoutil_statusskill_setisactive(original_i_unwrapped, true, _method_info);
