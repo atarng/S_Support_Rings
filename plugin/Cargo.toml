@@ -1,5 +1,5 @@
 [package]
-name = "s_support_rings"
+name = "check_support_rank"
 version = "0.1.0"
 authors = []
 edition = "2021"
@@ -10,7 +10,6 @@ titleid = "01006A800016E000" # Smash Ultimate
 [lib]
 crate-type = ["cdylib"]
 
-# skyline = { git = "https://github.com/ultimate-research/skyline-rs" }
 [dependencies]
 cobapi = { git = "https://github.com/atarng/cobapi", branch="enhance_calculator" }
 engage = { git = "https://github.com/atarng/engage", branch="enhance_calculator" }
