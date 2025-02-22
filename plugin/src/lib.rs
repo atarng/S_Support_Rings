@@ -2,7 +2,6 @@
 
 // use cobapi::*;
 use engage::{
-    // menu::{BasicMenu, BasicMenuItem},
     dialog::yesno::BasicDialogItemYes,
     force::*,
     gamedata::{ // Gamedata, JobData, PersonData,
@@ -15,7 +14,6 @@ use engage::{
         skill::*,
     },
     proc::ProcInst,
-    // singleton::SingletonClass,
     script::*,
     stream::Stream,
 };
